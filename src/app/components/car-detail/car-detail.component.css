@@ -1,0 +1,16 @@
+.title{
+    font-weight: bold;
+    text-align: center;
+    background-color: red;
+    color: white;
+    margin: 30px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.esnek {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+}
+ 

@@ -1,0 +1,9 @@
+.brand {
+    font-weight: bold;
+    background-color: rgb(68, 158, 50);
+    color: white;
+    text-align: center;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}

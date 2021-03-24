@@ -1,24 +1,24 @@
-<div *ngIf="dataLoaded==false" class="spinner-border" role="status">
+<div *ngIf="dataLoaded == false" class="spinner-border" role="status">
   <span class="visually-hidden">Loading...</span>
 </div>
 
-<table *ngIf="dataLoaded!=false" class="table">
+<div *ngIf="dataLoaded == true" class="car">Cars</div>
+
+<table *ngIf="dataLoaded != false" class="table">
   <thead>
     <tr>
-      <th>Id</th>
-      <th>Brand</th>
-      <th>Color</th>
-      <th>Model Year</th>
-      <th>Daily Price</th>
-      <th>Description</th>
+      <th style="text-align: center;">Color</th>
+      <th style="text-align: center;">Brand</th>
+      <th style="text-align: center;">Daily Price</th>
+      <th style="text-align: center;">Details</th>
+      <th style="text-align: center;">Status</th>
     </tr>
   </thead>
-  <tr *ngFor="let car of cars">
-    <td>{{ car.id }}</td>
-    <td>{{ car.brandName }}</td>
-    <td>{{ car.colorName }}</td>
-    <td>{{ car.modelYear }}</td>
-    <td>{{ car.dailyPrice }}</td>
-    <td>{{ car.description }}</td>
+  <tr *ngFor="let car of cars" class = "hovers" routerLink="/cars/detail/{{car.id}}"> 
+    <td style="text-align: center;">{{ car.colorName }}</td>
+    <td style="text-align: center;">{{ car.brandName }}</td>
+    <td style="text-align: center;">{{ car.dailyPrice }}</td>
+    <div align="center"><button routerLink="/cars/detail/{{car.id}}" type="button" class="btn btn-outline-primary" style="margin: 10px">View</button></div>
+    <td style="color: green; text-align: center;">Rentable</td>
   </tr>
 </table>
