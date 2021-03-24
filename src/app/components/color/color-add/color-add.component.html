@@ -1,0 +1,29 @@
+<div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Add New Color</h5>
+      </div>
+      <div class="modal-body">
+          <form [formGroup]="colorAddForm">
+              <div class="content">
+                  <label for="colorName">Color Name</label>
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      id="colorName"
+                      formControlName="colorName"
+                      class="form-control"
+                      placeholder="Enter the new color name here"
+                    />
+                  </div>
+                  <br>
+                  <a style="float: right">
+                    <button type="button" class="btn btn-success" style="float: right; margin: 10px;" (click)="addColor()">Add Color</button>
+                  </a>
+              </div>
+          </form>
+          
+      </div>
+    </div>
+  </div>
+  

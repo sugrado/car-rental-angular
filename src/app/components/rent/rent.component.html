@@ -1,0 +1,141 @@
+<!-- Button trigger modal -->
+<button
+  type="button"
+  class="but"
+  data-bs-toggle="modal"
+  data-bs-target="#staticBackdrop"
+>
+  RENT IT!
+</button>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="staticBackdrop"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="staticBackdropLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Rental</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+
+      <div class="modal-body">
+        <div class="content">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+                <h5 class="title">Information Box</h5>
+              </div>
+              <div class="card-body">
+                <form [formGroup]="rentAddForm">
+                  <div class="mb-3">
+                    <label for="customerId">Customer</label>
+                    <select class="form-select" formControlName="customerId">
+                      <option
+                        *ngFor="let customer of customers"
+                        value="{{ customer?.customerId }}"
+                      >
+                        Person: {{ customer.firstName }}
+                        {{ customer.lastName }} | Company:
+                        {{ customer.companyName }}
+                      </option>
+                    </select>
+                  </div>
+
+                  <div class="row">
+
+                    <div class="col-md-6">
+                      <label for="carId">Car Id</label>
+                      <div class="form-group">
+                        <input
+                          readonly
+                          type="number"
+                          id="carId"
+                          formControlName="carId"
+                          class="form-control"
+                          placeholder="Enter the number here"
+                          [(ngModel)]="carId"
+                        />
+                      </div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <label>Daily Price</label>
+                      <div class="form-group">
+                        <input
+                          readonly
+                          type="number"
+                          class="form-control"
+                          placeholder="{{ car?.dailyPrice | currency }}"
+                          value="{{ car?.dailyPrice | currency }}"
+                        />
+                      </div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <label for="rentDate">Rent Date</label>
+                      <div class="form-group">
+                        <input
+                          class="form-control"
+                          min="{{ setRentDate() }}"
+                          value="{{ setRentDate() }}"
+                          type="date"
+                          formControlName="rentDate"
+                        />
+                      </div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <label for="returnDate">Return Date</label>
+                      <div class="form-group">
+                        <input
+                          class="form-control"
+                          min="{{ setReturnDate() }}"
+                          value="{{ setReturnDate() }}"
+                          type="date"
+                          formControlName="returnDate"
+                        />
+                      </div>
+                    </div>
+                    
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div style="float: left">
+            <h6 style="color: red">
+              *The calculated amount will be shown on the payment page.
+            </h6>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+          Cancel
+        </button>
+        <button
+          type="button"
+          id="rent"
+          class="btn btn-success"
+          (click)="add()"
+          data-bs-dismiss="modal"
+        >
+          Rent Now
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

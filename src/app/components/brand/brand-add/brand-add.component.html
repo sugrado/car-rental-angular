@@ -1,0 +1,28 @@
+<div class="modal-dialog modal-lg">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="staticBackdropLabel">Add New Brand</h5>
+    </div>
+    <div class="modal-body">
+        <form [formGroup]="brandAddForm">
+            <div class="content">
+                <label for="brandName">Brand Name</label>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    id="brandName"
+                    formControlName="brandName"
+                    class="form-control"
+                    placeholder="Enter the new brand name here"
+                  />
+                </div>
+                <br>
+                <a style="float: right">
+                  <button type="button" class="btn btn-success" style="float: right; margin: 10px;" (click)="addBrand()">Add Brand</button>
+                </a>
+            </div>
+        </form>
+        
+    </div>
+  </div>
+</div>

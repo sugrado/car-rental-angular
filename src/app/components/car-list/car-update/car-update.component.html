@@ -1,0 +1,93 @@
+<br>
+<div *ngIf="car" class="content">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header"><h5 class="title">Update</h5></div>
+        <div class="card-body">
+          <form [formGroup]="carUpdateForm">
+            
+            <div class="mb-3">
+              <label for="id">Id</label>
+              <div class="form-group">
+                <input
+                  readonly
+                  type="number"
+                  id="id"
+                  formControlName="id"
+                  class="form-control"
+                  [(ngModel)]="car.id"
+                />
+              </div>
+            </div>
+  
+            <div class="mb-3">
+              <label for="brandId">Change Brand</label>
+              <div class="form-group">
+                <input
+                  type="number"
+                  id="brandId"
+                  formControlName="brandId"
+                  class="form-control"
+                  [(ngModel)]="car.brandId"
+                />
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="colorId">Change Color</label>
+              <div class="form-group">
+                <input
+                  type="number"
+                  id="colorId"
+                  formControlName="colorId"
+                  class="form-control"
+                  [(ngModel)]="car.colorId"
+                />
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="modelYear">Model Year</label>
+              <div class="form-group">
+                <input
+                  type="text"
+                  id="modelYear"
+                  formControlName="modelYear"
+                  class="form-control"
+                  [(ngModel)]="car.modelYear"
+                />
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="dailyPrice">Daily Price</label>
+              <div class="form-group">
+                <input
+                  type="number"
+                  id="dailyPrice"
+                  formControlName="dailyPrice"
+                  class="form-control"
+                  [(ngModel)]="car.dailyPrice"
+                />
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="description">Description</label>
+              <div class="form-group">
+                <input
+                  type="text"
+                  id="description"
+                  formControlName="description"
+                  class="form-control"
+                  [(ngModel)]="car.description"
+                />
+              </div>
+            </div>
+          </form>
+        </div>
+        <div style="text-align: center" class="card-footer">
+          <button  class="btn btn-fill btn-primary" (click)="update()">
+            Update
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>

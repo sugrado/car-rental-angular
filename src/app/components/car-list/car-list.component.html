@@ -1,0 +1,38 @@
+<div class="row">
+
+    <div class="col-md-5"><br>
+        <div class="row">
+              <div align="center">
+                <a routerLink="add-car"
+                  ><button type="button" class="btn btn-primary">Add Car</button></a>
+              </div>
+            
+          </div>
+        <router-outlet></router-outlet>
+    </div>
+
+    <div class="col-md-7">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th style="text-align: center;">Color</th>
+                    <th style="text-align: center;">Brand</th>
+                    <th style="text-align: center;">Daily Price</th>
+                    <th style="text-align: center;">Model Year</th>
+                    <th style="padding-left: 100px;">Actions</th>
+                    <th style="text-align: center;"></th>
+                    <th style="text-align: center;"></th>
+                </tr>
+            </thead>
+            <tr *ngFor="let car of cars" class = "hovers">
+                <td style="text-align: center;">{{ car.colorName }}</td>
+                <td style="text-align: center;">{{ car.brandName }}</td>
+                <td style="text-align: center;">{{ car.dailyPrice |currency}}</td>
+                <td style="text-align: center;">{{ car.modelYear }}</td>
+                <button routerLink="/cars/detail/{{car.id}}" type="button" class="btn btn-outline-primary" style="margin: 10px">View</button>
+                <button routerLink="update-car/{{car.id}}" type="button" class="btn btn-outline-warning" style="margin: 10px">Update</button>
+                <button (click) = "deleteCar(car)" type="button" class="btn btn-outline-danger" style="margin: 10px">Delete</button>
+            </tr>
+        </table>
+    </div>
+</div>

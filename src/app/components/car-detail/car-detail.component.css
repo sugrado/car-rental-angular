@@ -1,0 +1,39 @@
+.title{
+    font-weight: bold;
+    text-align: center;
+    background-color: #0D6EFD;
+    color: white;
+    margin: 30px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.esnek {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+}
+ 
+.but{
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  color: #fff;
+  background-color: #c7c9c7;
+  border-color: #c7c9c7;
+}

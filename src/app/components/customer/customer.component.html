@@ -2,19 +2,21 @@
     <span class="visually-hidden">Loading...</span>
   </div>
   
+  <div *ngIf="dataLoaded == true" class="customer">
+    Customers
+  </div>
+
   <table *ngIf="dataLoaded!=false" class="table">
     <thead>
       <tr>
-        <th>Id</th>
-        <th>User Id</th>
-        <th>Company Name</th>
-
+        <th style="text-align: center;">Id</th>
+        <th style="text-align: center;">Person Name</th>
+        <th style="text-align: center;">Company Name</th>
       </tr>
     </thead>
     <tr *ngFor="let customer of customers">
-      <td>{{ customer.id }}</td>
-      <td>{{ customer.userId }}</td>
-      <td>{{ customer.companyName }}</td>
-
+      <td style="text-align: center;">{{ customer.customerId }}</td>
+      <td style="text-align: center;">{{ customer.firstName }} {{ customer.lastName }}</td>
+      <td style="text-align: center;">{{ customer.companyName }}</td>
     </tr>
   </table>

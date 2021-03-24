@@ -2,15 +2,28 @@
   <span class="visually-hidden">Loading...</span>
 </div>
 
-<table *ngIf="dataLoaded != false" class="table">
-  <thead>
-    <tr>
-      <th>Id</th>
-      <th>Name</th>
-    </tr>
-  </thead>
-  <tr *ngFor="let color of colors">
-    <td>{{ color.id }}</td>
-    <td>{{ color.name }}</td>
-  </tr>
-</table>
+<div class="color">COLORS</div>
+
+<div class="mb-3" style="margin-top: 10px">
+  <input
+    type="text"
+    [(ngModel)]="filterText"
+    class="form-control"
+    id="filterText"
+    placeholder="Start typing..."
+  />
+</div>
+
+<ul class="list-group">
+  <!-- <li (click)="resetCurrentColor()" routerLink="/cars" class="list-group-item">
+    All
+  </li> -->
+  <li
+    (click)="setCurrentColor(color)"
+    [class]="getCurrentColorClass(color)"
+    *ngFor="let color of colors | colorFilter: filterText"
+    routerLink="/cars/colors/{{ color.colorId }}"
+  >
+    {{ color.colorName }}
+  </li>
+</ul>
