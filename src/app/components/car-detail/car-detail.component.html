@@ -1,19 +1,11 @@
 <div class = "row">
   <div class="col-md-1">
     <br>
-<<<<<<< HEAD
     <img (click) = "backClicked()" src="https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_arrow_back_48px-512.png" type = "button" width="65" height="50" alt="go back">
   </div>
   <div class = "col-md-11">
     <div *ngIf="dataLoaded == true" class="title">CAR IMAGES</div>
     <div id="carouselExampleIndicators" class="carousel carousel-dark slide" data-bs-ride="carousel">
-=======
-    <img routerLink="/cars" src="https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_arrow_back_48px-512.png" type = "button" width="65" height="50" alt="go back">
-  </div>
-  <div class = "col-md-11">
-    <div *ngIf="dataLoaded == true" class="title">CAR IMAGES</div>
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
->>>>>>> ddbf76170f500f304760d940b4de7fd8160c6f3a
       <div class="carousel-inner">
     
         <div  class="carousel-item " *ngFor="let image of images; first as fImg" [ngClass] = "{active: fImg}">
@@ -35,11 +27,7 @@
         <span class="visually-hidden">Loading...</span>
       </div>
       <div *ngIf="dataLoaded == true" class="title">CAR INFO</div>
-<<<<<<< HEAD
     <table *ngIf="car" class="table">
-=======
-    <table class="table">
->>>>>>> ddbf76170f500f304760d940b4de7fd8160c6f3a
       <thead>
         <tr>
           <th style="text-align: center;">Color</th>
@@ -47,7 +35,6 @@
           <th style="text-align: center;">Model Year</th>
           <th style="text-align: center;">Description</th>
           <th style="text-align: center;">Daily Price</th>
-<<<<<<< HEAD
           <!-- <th style="text-align: center;">Status</th> -->
         </tr>
       </thead>
@@ -72,18 +59,3 @@
   </div>
   
 </div>
-=======
-        </tr>
-      </thead>
-      <tr>
-        <td style="text-align: center;">{{ car?.colorName }}</td>
-        <td style="text-align: center;">{{ car?.brandName }}</td>
-        <td style="text-align: center;">{{ car?.modelYear }}</td>
-        <td style="text-align: center;">{{ car?.description }}</td>
-        <td style="text-align: center;">{{ car?.dailyPrice }} $</td>
-      </tr>
-    </table>
-  </div>
-  
-</div>
->>>>>>> ddbf76170f500f304760d940b4de7fd8160c6f3a

@@ -1,11 +1,7 @@
 .title{
     font-weight: bold;
     text-align: center;
-<<<<<<< HEAD
     background-color: #0D6EFD;
-=======
-    background-color: red;
->>>>>>> ddbf76170f500f304760d940b4de7fd8160c6f3a
     color: white;
     margin: 30px;
     padding: 10px;
@@ -17,7 +13,6 @@
   max-width: 400px;
   height: auto;
 }
-<<<<<<< HEAD
  
 .but{
   display: inline-block;
@@ -42,6 +37,3 @@
   background-color: #c7c9c7;
   border-color: #c7c9c7;
 }
-=======
- 
->>>>>>> ddbf76170f500f304760d940b4de7fd8160c6f3a

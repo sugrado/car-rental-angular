@@ -13,7 +13,6 @@ import { RentalComponent } from './components/rental/rental.component';
 import { NaviComponent } from './components/navi/navi.component';
 import { CustomerComponent } from './components/customer/customer.component';
 import { CarDetailComponent } from './components/car-detail/car-detail.component';
-<<<<<<< HEAD
 
 import { BrandFilterPipe } from './pipes/brand-filter.pipe';
 import { ColorFilterPipe } from './pipes/color-filter.pipe';
@@ -32,8 +31,6 @@ import { CarListComponent } from './components/car-list/car-list.component';
 import { CarAddComponent } from './components/car-list/car-add/car-add.component';
 import { CarUpdateComponent } from './components/car-list/car-update/car-update.component';
 import { CreditCardComponent } from './components/credit-card/credit-card.component';
-=======
->>>>>>> ddbf76170f500f304760d940b4de7fd8160c6f3a
 
 @NgModule({
   declarations: [
@@ -45,7 +42,6 @@ import { CreditCardComponent } from './components/credit-card/credit-card.compon
     NaviComponent,
     CustomerComponent,
     CarDetailComponent,
-<<<<<<< HEAD
     BrandFilterPipe,
     ColorFilterPipe,
     RentComponent,
@@ -72,8 +68,6 @@ import { CreditCardComponent } from './components/credit-card/credit-card.compon
     ToastrModule.forRoot({
       positionClass: 'toast-bottom-right',
     }),
-=======
->>>>>>> ddbf76170f500f304760d940b4de7fd8160c6f3a
   ],
   providers: [],
   bootstrap: [AppComponent],

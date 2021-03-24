@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-<<<<<<< HEAD
 import { ToastrService } from 'ngx-toastr';
 import { Brand } from 'src/app/models/brand';
-=======
->>>>>>> ddbf76170f500f304760d940b4de7fd8160c6f3a
 import { Car } from 'src/app/models/car';
 import { Color } from 'src/app/models/color';
 import { BrandService } from 'src/app/services/brand.service';
@@ -25,7 +22,6 @@ export class CarComponent implements OnInit {
   colorId:number = 0;
   brandId:number = 0;
 
-<<<<<<< HEAD
   constructor(
     private carService: CarService,
     private activatedRoute: ActivatedRoute,
@@ -48,22 +44,6 @@ export class CarComponent implements OnInit {
     });
     this.getBrands();
     this.getColors();
-=======
-  constructor(private carService: CarService, private activatedRoute:ActivatedRoute) { }
-
-  ngOnInit(): void {
-    this.activatedRoute.params.subscribe(params=>{
-      if(params["id"]){
-        this.getCarsByBrand(params["id"]);
-      }
-      else if(params["id"]){
-        this.getCarsByColor(params["id"]);
-      }
-      else {
-        this.getCars();
-      }
-    })
->>>>>>> ddbf76170f500f304760d940b4de7fd8160c6f3a
   }
 
   getCars() {
@@ -73,30 +53,19 @@ export class CarComponent implements OnInit {
     });
   }
 
-<<<<<<< HEAD
   getCarsByBrand(id: number) {
     this.carService.getCarsByBrand(id).subscribe((response) => {
-=======
-  getCarsByBrand(brandId:number) {
-    this.carService.getCarsByBrand(brandId).subscribe((response) => {
->>>>>>> ddbf76170f500f304760d940b4de7fd8160c6f3a
       this.cars = response.data;
       this.dataLoaded = true;
     });
   }
 
-<<<<<<< HEAD
   getCarsByColor(id: number) {
     this.carService.getCarsByColor(id).subscribe((response) => {
-=======
-  getCarsByColor(colorId:number) {
-    this.carService.getCarsByColor(colorId).subscribe((response) => {
->>>>>>> ddbf76170f500f304760d940b4de7fd8160c6f3a
       this.cars = response.data;
       this.dataLoaded = true;
     });
   }
-<<<<<<< HEAD
 
   getBrands() {
     this.brandService.getBrands().subscribe((response) => {
@@ -134,6 +103,4 @@ export class CarComponent implements OnInit {
       return false;
     }
   }
-=======
->>>>>>> ddbf76170f500f304760d940b4de7fd8160c6f3a
 }

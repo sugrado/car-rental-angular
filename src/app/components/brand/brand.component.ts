@@ -10,14 +10,9 @@ import { BrandService } from 'src/app/services/brand.service';
 export class BrandComponent implements OnInit {
   brands: Brand[] = [];
   currentBrand: Brand;
-<<<<<<< HEAD
   brandForReset:Brand={brandId:-1, brandName:""}
   dataLoaded = false;
   filterText = "";
-=======
-  brandForReset:Brand={id:-1, name:""}
-  dataLoaded = false;
->>>>>>> ddbf76170f500f304760d940b4de7fd8160c6f3a
 
   constructor(private brandService: BrandService) {}
 

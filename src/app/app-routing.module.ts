@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-<<<<<<< HEAD
 import { BrandAddComponent } from './components/brand/brand-add/brand-add.component';
 import { BrandDeleteComponent } from './components/brand/brand-delete/brand-delete.component';
 import { BrandDetailComponent } from './components/brand/brand-detail/brand-detail.component';
@@ -80,21 +79,6 @@ const routes: Routes = [
   { path: 'cars/detail/:id', component: CarDetailComponent },
   { path: 'cars/filter/:brandId/:colorId', component: CarComponent },
   { path: 'payments/add', component: CreditCardComponent },
-=======
-import { CarDetailComponent } from './components/car-detail/car-detail.component';
-import { CarComponent } from './components/car/car.component';
-import { CustomerComponent } from './components/customer/customer.component';
-import { RentalComponent } from './components/rental/rental.component';
-
-const routes: Routes = [
-  {path:"", pathMatch:"full", component:CarComponent},
-  {path:"cars", component:CarComponent},
-  {path:"cars/brand/:id", component:CarComponent},
-  {path:"cars/color/:id", component:CarComponent},
-  {path:"rentals", component:RentalComponent},
-  {path:"customers", component:CustomerComponent},
-  {path:"cars/detail/:id", component:CarDetailComponent}
->>>>>>> ddbf76170f500f304760d940b4de7fd8160c6f3a
 ];
 
 @NgModule({

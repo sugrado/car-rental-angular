@@ -1,10 +1,6 @@
 import { ThisReceiver } from '@angular/compiler';
-<<<<<<< HEAD
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import {Location} from '@angular/common';
-=======
-import { Component, OnInit } from '@angular/core';
->>>>>>> ddbf76170f500f304760d940b4de7fd8160c6f3a
 import { ActivatedRoute } from '@angular/router';
 import { Car } from 'src/app/models/car';
 import { CarImage } from 'src/app/models/carImage';
@@ -17,7 +13,6 @@ import { CarService } from 'src/app/services/car.service';
 })
 export class CarDetailComponent implements OnInit {
   car: Car;
-<<<<<<< HEAD
   carId:number;
   images: CarImage[]=[];
   apiUrl = "https://localhost:44350"
@@ -25,13 +20,6 @@ export class CarDetailComponent implements OnInit {
  
 
   constructor(private carService: CarService, private activatedRoute: ActivatedRoute, private _location: Location) 
-=======
-  images: CarImage[]=[];
-  apiUrl = "https://localhost:44350"
-  dataLoaded = false;
-
-  constructor(private carService: CarService, private activatedRoute: ActivatedRoute) 
->>>>>>> ddbf76170f500f304760d940b4de7fd8160c6f3a
   {
 
   }
@@ -48,10 +36,7 @@ export class CarDetailComponent implements OnInit {
   getCarDetails(id: number) {
     this.carService.getCarDetailById(id).subscribe((response) => {
       this.car = response.data;
-<<<<<<< HEAD
       this.carId = response.data.id;
-=======
->>>>>>> ddbf76170f500f304760d940b4de7fd8160c6f3a
       this.dataLoaded = true;
     });
   }
@@ -60,16 +45,10 @@ export class CarDetailComponent implements OnInit {
     this.carService.getImagesById(id).subscribe((response) => {
       this.images = response.data
       this.dataLoaded = true;
-<<<<<<< HEAD
     })
   }
 
   backClicked() {
     this._location.back();
   }
-=======
-      console.log(this.images)
-    })
-  }
->>>>>>> ddbf76170f500f304760d940b4de7fd8160c6f3a
 }

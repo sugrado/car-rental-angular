@@ -2,7 +2,6 @@
   <span class="visually-hidden">Loading...</span>
 </div>
 
-<<<<<<< HEAD
 
 
 <div class="row">
@@ -70,25 +69,3 @@
 
 </div>
 
-=======
-<div *ngIf="dataLoaded == true" class="car">Cars</div>
-
-<table *ngIf="dataLoaded != false" class="table">
-  <thead>
-    <tr>
-      <th style="text-align: center;">Color</th>
-      <th style="text-align: center;">Brand</th>
-      <th style="text-align: center;">Daily Price</th>
-      <th style="text-align: center;">Details</th>
-      <th style="text-align: center;">Status</th>
-    </tr>
-  </thead>
-  <tr *ngFor="let car of cars" class = "hovers" routerLink="/cars/detail/{{car.id}}"> 
-    <td style="text-align: center;">{{ car.colorName }}</td>
-    <td style="text-align: center;">{{ car.brandName }}</td>
-    <td style="text-align: center;">{{ car.dailyPrice }}</td>
-    <div align="center"><button routerLink="/cars/detail/{{car.id}}" type="button" class="btn btn-outline-primary" style="margin: 10px">View</button></div>
-    <td style="color: green; text-align: center;">Rentable</td>
-  </tr>
-</table>
->>>>>>> ddbf76170f500f304760d940b4de7fd8160c6f3a
