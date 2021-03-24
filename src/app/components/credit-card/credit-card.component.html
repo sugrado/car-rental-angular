@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body style="margin: 100px">
+    <div class="row">
+      <div class="col-75">
+        <div class="container">
+          <form [formGroup]="paymentAddForm">
+            <div class="row">
+              <div class="col-50">
+                <h3 style="text-align: center">Payment</h3>
+                <label for="fname">Accepted Cards</label>
+                <div class="icon-container">
+                  <i class="fa fa-cc-visa" style="color: navy"> </i>
+                  <i class="fa fa-cc-amex" style="color: blue"> </i>
+                  <i class="fa fa-cc-mastercard" style="color: red"> </i>
+                  <i class="fa fa-cc-discover" style="color: orange"> </i>
+                </div>
+                <label for="cardHolder">Brand Name</label>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    id="cardHolder"
+                    formControlName="cardHolder"
+                    class="form-control"
+                    placeholder="Enter the card holder name here"
+                  />
+                </div>
+
+                <label for="cardNumber">Credit Card Number</label>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    id="cardNumber"
+                    formControlName="cardNumber"
+                    class="form-control"
+                    placeholder="Enter the card number here"
+                  />
+                </div>
+
+                <div class="row">
+                  <div class="col-50">
+                    <label for="expirationDate">Expiration Date</label>
+                    <div class="form-group">
+                      <input
+                        type="text"
+                        id="expirationDate"
+                        formControlName="expirationDate"
+                        placeholder="01/01"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="col-50">
+                    <label for="cvvCode">CVV</label>
+                    <input
+                      type="text"
+                      id="cvvCode"
+                      formControlName="cvvCode"
+                      placeholder="352"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div style="margin-left: 2%;">
+            <button type="button" class="btn btn-success" style="float: right; margin: 10px" (click)="add()">
+            Pay Now
+            </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<!-- <div class="modal-dialog modal-lg">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="staticBackdropLabel">Payment Step</h5>
+    </div>
+    <div class="modal-body">
+      <form [formGroup]="paymentAddForm">
+        <div class="content">
+          <label for="cardHolder">Brand Name</label>
+          <div class="form-group">
+            <input
+              type="text"
+              id="cardHolder"
+              formControlName="cardHolder"
+              class="form-control"
+              placeholder="Enter the card holder name here"
+            />
+          </div>
+
+          <label for="cardNumber">Card Number</label>
+          <div class="form-group">
+            <input
+              type="text"
+              id="cardNumber"
+              formControlName="cardNumber"
+              class="form-control"
+              placeholder="Enter the card number here"
+            />
+          </div>
+
+          <br />
+          <a style="float: right">
+            <button
+              type="button"
+              class="btn btn-success"
+              style="float: right; margin: 10px"
+            >
+              Add Brand
+            </button>
+          </a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div> -->

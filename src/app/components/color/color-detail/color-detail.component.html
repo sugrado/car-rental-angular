@@ -1,0 +1,50 @@
+<br>
+<div class="row">
+  <div class="col-md-8">
+    <div class="row">
+      <div class="col-md-4">
+        <div align="center">
+          <a routerLink="add-color"
+            ><button type="button" class="btn btn-primary">Add Color</button></a>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div align="center">
+          <a routerLink="update-color">
+            <button type="button" class="btn btn-primary">Update Color</button></a>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div align="center">
+          <a routerLink="delete-color">
+            <button type="button" class="btn btn-primary">Delete Color</button></a>
+        </div>
+      </div>
+    </div>
+
+    <router-outlet></router-outlet>
+  </div>
+
+  <div class="col-md-4">
+    <div class="mb-3" style="margin-top: 10px">
+      <input
+        type="text"
+        [(ngModel)]="filterText"
+        class="form-control"
+        id="filterText"
+        placeholder="Search..."
+      />
+    </div>
+
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let color of colors | colorFilter: filterText"
+      >
+        {{ color.colorName }}
+      </li>
+    </ul>
+  </div>
+</div>

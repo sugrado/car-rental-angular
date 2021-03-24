@@ -1,0 +1,50 @@
+<br />
+<div class="row">
+  <div class="col-md-8">
+    <div class="row">
+      <div class="col-md-4">
+        <div align="center">
+          <a routerLink="add-brand"
+            ><button type="button" class="btn btn-primary">Add Brand</button></a>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div align="center">
+          <a routerLink="update-brand">
+            <button type="button" class="btn btn-primary">Update Brand</button></a>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div align="center">
+          <a routerLink="delete-brand">
+            <button type="button" class="btn btn-primary">Delete Brand</button></a>
+        </div>
+      </div>
+    </div>
+
+    <router-outlet></router-outlet>
+  </div>
+
+  <div class="col-md-4">
+    <div class="mb-3" style="margin-top: 10px">
+      <input
+        type="text"
+        [(ngModel)]="filterText"
+        class="form-control"
+        id="filterText"
+        placeholder="Search..."
+      />
+    </div>
+
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let brand of brands | brandFilter: filterText"
+      >
+        {{ brand.brandName }}
+      </li>
+    </ul>
+  </div>
+</div>

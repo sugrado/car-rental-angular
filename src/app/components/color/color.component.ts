@@ -10,8 +10,14 @@ import { ColorService } from 'src/app/services/color.service';
 export class ColorComponent implements OnInit {
   colors: Color[] = [];
   currentColor: Color;
+<<<<<<< HEAD
+  colorForReset:Color={colorId:-1, colorName:""}
+  dataLoaded = false;
+  filterText = "";
+=======
   colorForReset:Color={id:-1, name:""}
   dataLoaded = false;
+>>>>>>> ddbf76170f500f304760d940b4de7fd8160c6f3a
 
   constructor(private colorService: ColorService) {}
 

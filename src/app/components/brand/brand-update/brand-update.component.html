@@ -1,0 +1,73 @@
+<div class="row">
+  <div class="col-md-6">
+    <br />
+    <div class="mb-3" style="margin-top: 10px">
+      <input
+        type="text"
+        [(ngModel)]="filterText"
+        class="form-control"
+        id="filterText"
+        placeholder="Search..."
+      />
+    </div>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th style="text-align: center">Brand Name</th>
+          <th style="padding-left: 100px">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="let brand of brands | brandFilter: filterText"
+          class="hovers"
+        >
+          <td style="text-align: center">{{ brand.brandName }}</td>
+          <div align="center">
+            <button
+              (click)="updateBrand(brand)"
+              type="button"
+              class="btn btn-warning"
+            >
+              <span>Update</span>
+            </button>
+          </div>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="col-md-6">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Update Brand</h5>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="brandAddForm">
+            <div class="content">
+              <label for="brandName">Change name</label>
+              <div class="form-group">
+                <input
+                  type="text"
+                  id="brandName"
+                  formControlName="brandName"
+                  class="form-control"
+                  placeholder="Write new brand name"
+                />
+              </div>
+            </div>
+          </form>
+          <br />
+          <div class="alert alert-warning" role="alert">
+            <h6>
+              Type in the new brand name and select the brand you want to update
+              from the menu on the left.
+            </h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

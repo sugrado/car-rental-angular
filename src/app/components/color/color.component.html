@@ -2,8 +2,36 @@
   <span class="visually-hidden">Loading...</span>
 </div>
 
+<<<<<<< HEAD
+<div class="color">COLORS</div>
+
+<div class="mb-3" style="margin-top: 10px">
+  <input
+    type="text"
+    [(ngModel)]="filterText"
+    class="form-control"
+    id="filterText"
+    placeholder="Start typing..."
+  />
+</div>
+
+<ul class="list-group">
+  <!-- <li (click)="resetCurrentColor()" routerLink="/cars" class="list-group-item">
+    All
+  </li> -->
+  <li
+    (click)="setCurrentColor(color)"
+    [class]="getCurrentColorClass(color)"
+    *ngFor="let color of colors | colorFilter: filterText"
+    routerLink="/cars/colors/{{ color.colorId }}"
+  >
+    {{ color.colorName }}
+  </li>
+</ul>
+=======
 <div class = "color">COLORS</div>
 <ul class = "list-group">
   <li (click) = "resetCurrentColor()"  routerLink = "/cars" class = "list-group-item">All</li>
   <li (click)="setCurrentColor(color)" routerLink = "/cars/color/{{color.id}}" *ngFor="let color of colors" [class] = "getCurrentColorClass(color)"> {{color.name}} </li>
 </ul>
+>>>>>>> ddbf76170f500f304760d940b4de7fd8160c6f3a

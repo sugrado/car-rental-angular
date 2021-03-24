@@ -1,0 +1,35 @@
+<div class="col-md-6">
+  <br />
+  <div class="mb-3" style="margin-top: 10px">
+    <input
+      type="text"
+      [(ngModel)]="filterText"
+      class="form-control"
+      id="filterText"
+      placeholder="Search..."
+    />
+  </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th style="text-align: center">Brand Name</th>
+        <th style="padding-left: 100px">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let brand of brands | brandFilter: filterText" class="hovers">
+        <td style="text-align: center">{{ brand.brandName }}</td>
+        <div align="center">
+          <button
+            (click)="deleteBrand(brand)"
+            type="button"
+            class="btn btn-danger"
+          >
+            <span>Delete</span>
+          </button>
+        </div>
+      </tr>
+    </tbody>
+  </table>
+</div>

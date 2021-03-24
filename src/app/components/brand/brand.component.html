@@ -1,10 +1,38 @@
-<div *ngIf="dataLoaded==false" class="spinner-border" role="status">
+<div *ngIf="dataLoaded == false" class="spinner-border" role="status">
   <span class="visually-hidden">Loading...</span>
 </div>
 
+<<<<<<< HEAD
+<div class="brand">BRANDS</div>
+
+<div class="mb-3" style="margin-top: 10px">
+  <input
+    type="text"
+    [(ngModel)]="filterText"
+    class="form-control"
+    id="filterText"
+    placeholder="Start typing..."
+  />
+</div>
+
+<ul class="list-group">
+  <!-- <li (click)="resetCurrentBrand()" routerLink="/cars" class="list-group-item">
+    All
+  </li> -->
+  <li
+    (click)="setCurrentBrand(brand)"
+    [class]="getCurrentBrandClass(brand)"
+    *ngFor="let brand of brands | brandFilter: filterText"
+    routerLink="/cars/brands/{{ brand.brandId }}"
+  >
+    {{ brand.brandName }}
+  </li>
+</ul>
+=======
 <div class = brand>BRANDS</div>
 <ul class = "list-group">
   <li (click) = "resetCurrentBrand()" routerLink = "/cars" class = "list-group-item">All</li>
   <li (click)="setCurrentBrand(brand)" routerLink = "/cars/brand/{{brand.id}}" *ngFor="let brand of brands" [class] = "getCurrentBrandClass(brand)"> {{brand.name}} </li>
 </ul>
 
+>>>>>>> ddbf76170f500f304760d940b4de7fd8160c6f3a
