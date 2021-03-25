@@ -8,6 +8,7 @@ import {
 } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { ErrorHelper } from 'src/app/helpers/errorHelper';
 import { CreditCard } from 'src/app/models/creditCard';
 import { CreditCardService } from 'src/app/services/credit-card.service';
 
@@ -49,14 +50,7 @@ export class CreditCardComponent implements OnInit {
           }, 2000);
         },
         (responseError) => {
-          if (responseError.error.Errors.length > 0) {
-            for (let i = 0; i < responseError.error.Errors.length; i++) {
-              this.toastrService.error(
-                responseError.error.Errors[i].ErrorMessage,
-                'Error'
-              );
-            }
-          }
+          this.toastrService.error(ErrorHelper.getMessage(responseError), "Error");
         }
       );
     } else {

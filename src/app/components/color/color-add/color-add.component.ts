@@ -7,6 +7,7 @@ import {
 } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { ErrorHelper } from 'src/app/helpers/errorHelper';
 import { ColorService } from 'src/app/services/color.service';
 
 @Component({
@@ -15,12 +16,11 @@ import { ColorService } from 'src/app/services/color.service';
   styleUrls: ['./color-add.component.css'],
 })
 export class ColorAddComponent implements OnInit {
-
-  colorAddForm:FormGroup;
+  colorAddForm: FormGroup;
 
   constructor(
     private formBuilder: FormBuilder,
-    private colorService:ColorService,
+    private colorService: ColorService,
     private activatedRoute: ActivatedRoute,
     private toastrService: ToastrService
   ) {}
@@ -29,29 +29,31 @@ export class ColorAddComponent implements OnInit {
     this.createColorAddForm();
   }
 
-  createColorAddForm(){
+  createColorAddForm() {
     this.colorAddForm = this.formBuilder.group({
-      colorName: ['', Validators.required]
+      colorName: ['', Validators.required],
     });
   }
 
-  addColor(){
-    if(this.colorAddForm.valid){
-      let colorModel = Object.assign({},this.colorAddForm.value)
-      this.colorService.addColor(colorModel).subscribe(response=>{
-        this.toastrService.success(response.message,"Success")
-      },responseError=>{
-        if(responseError.error.Errors.length>0){
-          for (let i = 0; i <responseError.error.Errors.length; i++) {
-            this.toastrService.error(responseError.error.Errors[i].ErrorMessage
-              ,"Verification error")
-          }       
-        } 
-      })
-      
-    }else{
-      this.toastrService.warning("Name is required!","Warning")
+  addColor() {
+    if (this.colorAddForm.valid) {
+      let colorModel = Object.assign({}, this.colorAddForm.value);
+      this.colorService.addColor(colorModel).subscribe(
+        (response) => {
+          this.toastrService.success(response.message, 'Success');
+          setTimeout(() => {
+            window.location.reload();
+          }, 1000);
+        },
+        (responseError) => {
+          this.toastrService.error(
+            ErrorHelper.getMessage(responseError),
+            'Error'
+          );
+        }
+      );
+    } else {
+      this.toastrService.warning('Name is required!', 'Warning');
     }
-    setTimeout(() => {  window.location.reload(); }, 1000);
   }
 }

@@ -7,6 +7,7 @@ import {
 } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { ErrorHelper } from 'src/app/helpers/errorHelper';
 import { Color } from 'src/app/models/color';
 import { ColorService } from 'src/app/services/color.service';
 
@@ -16,7 +17,6 @@ import { ColorService } from 'src/app/services/color.service';
   styleUrls: ['./color-update.component.css'],
 })
 export class ColorUpdateComponent implements OnInit {
-
   filterText = '';
   colorAddForm: FormGroup;
   colors: Color[] = [];
@@ -45,30 +45,26 @@ export class ColorUpdateComponent implements OnInit {
     });
   }
 
-  updateColor(color: Color){
+  updateColor(color: Color) {
     if (this.colorAddForm.valid) {
       let colorModel = Object.assign({}, this.colorAddForm.value);
       colorModel.colorId = color.colorId;
       this.colorService.updateColor(colorModel).subscribe(
         (response) => {
           this.toastrService.success(response.message, 'Color updated');
+          setTimeout(() => {
+            window.location.reload();
+          }, 1000);
         },
         (responseError) => {
-          if (responseError.error.Errors.length > 0) {
-            for (let i = 0; i < responseError.error.Errors.length; i++) {
-              this.toastrService.error(
-                responseError.error.Errors[i].ErrorMessage,
-                'You cant update color'
-              );
-            }
-          }
+          this.toastrService.error(
+            ErrorHelper.getMessage(responseError),
+            'Error'
+          );
         }
       );
     } else {
-      this.toastrService.warning("Name is required!","Warning")
+      this.toastrService.warning('Name is required!', 'Warning');
     }
-    setTimeout(() => {  window.location.reload(); }, 1000);
   }
-
-
 }

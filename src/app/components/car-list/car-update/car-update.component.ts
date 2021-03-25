@@ -12,6 +12,7 @@ import { ToastrService } from 'ngx-toastr';
 import { Brand } from 'src/app/models/brand';
 import { Color } from 'src/app/models/color';
 import { BrandService } from 'src/app/services/brand.service';
+import { ErrorHelper } from 'src/app/helpers/errorHelper';
 
 @Component({
   selector: 'app-car-update',
@@ -20,8 +21,8 @@ import { BrandService } from 'src/app/services/brand.service';
 })
 export class CarUpdateComponent implements OnInit {
   car: Car;
-  brands:Brand[]=[];
-  colors:Color[]=[];
+  brands: Brand[] = [];
+  colors: Color[] = [];
   carUpdateForm: FormGroup;
 
   constructor(
@@ -30,7 +31,7 @@ export class CarUpdateComponent implements OnInit {
     private carService: CarService,
     private formBuilder: FormBuilder,
     private toastrService: ToastrService,
-    private router:Router
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -62,24 +63,33 @@ export class CarUpdateComponent implements OnInit {
   getById(carId: number) {
     this.carService.getCarDetailById(carId).subscribe((response) => {
       this.car = response.data;
-      console.log(this.car)
+      console.log(this.car);
     });
   }
 
   delay(ms: number) {
-    return new Promise( resolve => setTimeout(resolve, ms) );
+    return new Promise((resolve) => setTimeout(resolve, ms));
   }
 
   update() {
     if (this.carUpdateForm.valid) {
       let carModel = Object.assign({}, this.carUpdateForm.value);
-      this.carService.updateCar(carModel).subscribe((response)=>{
-        this.toastrService.success(response.message, "Car Updated")
-      });
-    }else{
+      this.carService.updateCar(carModel).subscribe(
+        (response) => {
+          this.toastrService.success(response.message, 'Car Updated');
+          setTimeout(() => {
+            window.location.reload();
+          }, 1000);
+        },
+        (responseError) => {
+          this.toastrService.error(
+            ErrorHelper.getMessage(responseError),
+            'Error'
+          );
+        }
+      );
+    } else {
       this.toastrService.error('Please fill in the blanks.', 'Error');
     }
-    setTimeout(() => {  window.location.reload(); }, 1000);
   }
-  
 }

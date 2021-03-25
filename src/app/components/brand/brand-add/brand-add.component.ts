@@ -7,6 +7,7 @@ import {
 } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { ErrorHelper } from 'src/app/helpers/errorHelper';
 import { BrandService } from 'src/app/services/brand.service';
 
 @Component({
@@ -40,21 +41,19 @@ export class BrandAddComponent implements OnInit {
       this.brandService.addBrand(brandModel).subscribe(
         (response) => {
           this.toastrService.success(response.message, 'Success');
+          setTimeout(() => {
+            window.location.reload();
+          }, 1000);
         },
         (responseError) => {
-          if (responseError.error.Errors.length > 0) {
-            for (let i = 0; i < responseError.error.Errors.length; i++) {
-              this.toastrService.error(
-                responseError.error.Errors[i].ErrorMessage,
-                'Verification error'
-              );
-            }
-          }
+          this.toastrService.error(
+            ErrorHelper.getMessage(responseError),
+            'Error'
+          );
         }
       );
     } else {
       this.toastrService.warning('Name is required!', 'Warning');
     }
-    setTimeout(() => {  window.location.reload(); }, 1000);
   }
 }

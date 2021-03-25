@@ -7,6 +7,7 @@ import {
 } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { ErrorHelper } from 'src/app/helpers/errorHelper';
 import { Car } from 'src/app/models/car';
 import { CustomerDetail } from 'src/app/models/customerDetail';
 import { Rent } from 'src/app/models/rent';
@@ -92,36 +93,13 @@ export class RentComponent implements OnInit {
           setTimeout(() => {
             this.router.navigate(['payments/add']);
           }, 3000);
-          
         },
         (responseError) => {
-          if (responseError.error.Errors !== undefined) {
-            if (responseError.error.Errors.length > 0) {
-              for (let i = 0; i < responseError.error.Errors.length; i++) {
-                this.toastrService.error(
-                  responseError.error.Errors[i].ErrorMessage,
-                  'Verification error'
-                );
-              }
-            }
-          }
-          else{
-            this.toastrService.error(responseError.error.message, 'Error');
-          }
+          this.toastrService.error(ErrorHelper.getMessage(responseError), "Error");
         }
       );
     } else {
       this.toastrService.error('Please fill in the blanks.', 'Error');
     }
   }
-
-  /*
-   * Payment page
-  getRentalDetailsById(id: number) {
-    this.rentalService.getRentalById(id).subscribe((response) => {
-      this.rental = response.data
-      console.log(this.rental);
-    });
-  }
-  */
 }

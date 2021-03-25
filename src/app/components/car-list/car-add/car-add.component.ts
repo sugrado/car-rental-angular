@@ -8,6 +8,7 @@ import {
 } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { ErrorHelper } from 'src/app/helpers/errorHelper';
 import { Brand } from 'src/app/models/brand';
 import { Color } from 'src/app/models/color';
 import { BrandService } from 'src/app/services/brand.service';
@@ -57,24 +58,20 @@ export class CarAddComponent implements OnInit {
       this.carService.addCar(carModel).subscribe(
         (response) => {
           this.toastrService.success(response.message, ' Car Added');
+          setTimeout(() => {
+            window.location.reload();
+          }, 1000);
         },
         (responseError) => {
-          if (responseError.error.Errors.length > 0) {
-            for (let i = 0; i < responseError.error.Errors.length; i++) {
-              this.toastrService.error(
-                responseError.error.Errors[i].ErrorMessage,
-                'You Cant Add'
-              );
-            }
-          }
+          this.toastrService.error(
+            ErrorHelper.getMessage(responseError),
+            'Error'
+          );
         }
       );
     } else {
       this.toastrService.error('Please fill in the blanks.', 'Error');
     }
-    setTimeout(() => {
-      window.location.reload();
-    }, 1000);
   }
 
   getBrands() {
