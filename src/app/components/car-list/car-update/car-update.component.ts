@@ -13,6 +13,7 @@ import { Brand } from 'src/app/models/brand';
 import { Color } from 'src/app/models/color';
 import { BrandService } from 'src/app/services/brand.service';
 import { ErrorHelper } from 'src/app/helpers/errorHelper';
+import { ColorService } from 'src/app/services/color.service';
 
 @Component({
   selector: 'app-car-update',
@@ -28,6 +29,7 @@ export class CarUpdateComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private brandService: BrandService,
+    private colorService : ColorService,
     private carService: CarService,
     private formBuilder: FormBuilder,
     private toastrService: ToastrService,
@@ -39,13 +41,22 @@ export class CarUpdateComponent implements OnInit {
       if (params['carId']) {
         this.getById(params['carId']);
         this.createCarUpdateForm();
+        console.log(this.car);
       }
     });
+    this.getBrands();
+    this.getColors();
   }
 
   getBrands() {
     this.brandService.getBrands().subscribe((response) => {
       this.brands = response.data;
+    });
+  }
+
+  getColors() {
+    this.colorService.getColors().subscribe((response) => {
+      this.colors = response.data;
     });
   }
 
@@ -65,10 +76,6 @@ export class CarUpdateComponent implements OnInit {
       this.car = response.data;
       console.log(this.car);
     });
-  }
-
-  delay(ms: number) {
-    return new Promise((resolve) => setTimeout(resolve, ms));
   }
 
   update() {

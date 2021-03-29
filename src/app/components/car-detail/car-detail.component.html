@@ -1,11 +1,11 @@
 <div class = "row">
   <div class="col-md-1">
     <br>
-    <img (click) = "backClicked()" src="https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_arrow_back_48px-512.png" type = "button" width="65" height="50" alt="go back">
+    <img style="background-color: rgba(255, 255, 255, 0.295); border-radius: 20px;" (click) = "backClicked()" src="https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_arrow_back_48px-512.png" type = "button" width="65" height="50" alt="go back">
   </div>
   <div class = "col-md-11">
     <div *ngIf="dataLoaded == true" class="title">CAR IMAGES</div>
-    <div id="carouselExampleIndicators" class="carousel carousel-dark slide" data-bs-ride="carousel">
+    <div id="carouselExampleIndicators" class="carousel carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
     
         <div  class="carousel-item " *ngFor="let image of images; first as fImg" [ngClass] = "{active: fImg}">
@@ -27,7 +27,7 @@
         <span class="visually-hidden">Loading...</span>
       </div>
       <div *ngIf="dataLoaded == true" class="title">CAR INFO</div>
-    <table *ngIf="car" class="table">
+    <table *ngIf="car" class="table" style="background-color: rgba(255, 255, 255, 0.295); color: white; border-radius: 10px;">
       <thead>
         <tr>
           <th style="text-align: center;">Color</th>
@@ -35,6 +35,7 @@
           <th style="text-align: center;">Model Year</th>
           <th style="text-align: center;">Description</th>
           <th style="text-align: center;">Daily Price</th>
+          <th style="text-align: center;">Minimum Findex Point</th>
           <!-- <th style="text-align: center;">Status</th> -->
         </tr>
       </thead>
@@ -44,6 +45,7 @@
         <td style="text-align: center;">{{ car.modelYear }}</td>
         <td style="text-align: center;">{{ car.description }}</td>
         <td style="text-align: center;" >{{ car.dailyPrice | currency}}</td>
+        <td style="text-align: center; font-weight: bold;">{{ car.minFindexPoint }}</td>
         <!-- <td style="text-align: center; color: green;" *ngIf="car?.status==true">Rentable</td>
         <td style="text-align: center; color: red; font-weight: bold;" *ngIf="car?.status==false">Unrentable</td> -->
       </tr>

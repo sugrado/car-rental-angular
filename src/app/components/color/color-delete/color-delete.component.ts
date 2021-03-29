@@ -1,27 +1,28 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup,Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { ErrorHelper } from 'src/app/helpers/errorHelper';
 import { Color } from 'src/app/models/color';
 import { ColorService } from 'src/app/services/color.service';
 
 @Component({
   selector: 'app-color-delete',
   templateUrl: './color-delete.component.html',
-  styleUrls: ['./color-delete.component.css']
+  styleUrls: ['./color-delete.component.css'],
 })
 export class ColorDeleteComponent implements OnInit {
-
   colorAddForm: FormGroup;
   colors: Color[] = [];
   filterText = '';
 
-  constructor(private colorService: ColorService,
+  constructor(
+    private colorService: ColorService,
     private formBuilder: FormBuilder,
     private activatedRoute: ActivatedRoute,
     private toastrService: ToastrService,
-    private router:Router)
-     { }
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.createColorAddForm();
@@ -40,11 +41,20 @@ export class ColorDeleteComponent implements OnInit {
     });
   }
 
-  deleteColor(color: Color){
-    this.colorService.deleteColor(color).subscribe((response) => {
-      this.toastrService.success(response.message, 'Color deleted');
-  });
-  setTimeout(() => {  window.location.reload(); }, 1000);
+  deleteColor(color: Color) {
+    this.colorService.deleteColor(color).subscribe(
+      (response) => {
+        this.toastrService.success(response.message, 'Color deleted');
+        setTimeout(() => {
+          window.location.reload();
+        }, 1000);
+      },
+      (responseError) => {
+        this.toastrService.error(
+          ErrorHelper.getMessage(responseError),
+          'Error'
+        );
+      }
+    );
   }
-
 }

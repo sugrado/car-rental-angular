@@ -1,12 +1,20 @@
 <!-- Button trigger modal -->
-<button
-  type="button"
-  class="but"
-  data-bs-toggle="modal"
-  data-bs-target="#staticBackdrop"
->
-  RENT IT!
-</button>
+<div *ngIf="!isAuth()" class="container">
+  <div class="alert alert-danger" role="alert">
+    You must log in to rent a car.
+  </div>
+</div>
+
+<div *ngIf="isAuth()">
+  <button
+    type="button"
+    class="but"
+    data-bs-toggle="modal"
+    data-bs-target="#staticBackdrop"
+  >
+    RENT IT!
+  </button>
+</div>
 
 <!-- Modal -->
 <div
@@ -41,20 +49,19 @@
                 <form [formGroup]="rentAddForm">
                   <div class="mb-3">
                     <label for="customerId">Customer</label>
-                    <select class="form-select" formControlName="customerId">
+                    <select class="form-select"  [(ngModel)]="customerId" formControlName="customerId">
                       <option
                         *ngFor="let customer of customers"
-                        value="{{ customer?.customerId }}"
+                        [value]="customer.customerId"
                       >
                         Person: {{ customer.firstName }}
                         {{ customer.lastName }} | Company:
-                        {{ customer.companyName }}
+                        {{ customer.companyName }} | Findex Score: {{customer.findexPoint}}
                       </option>
                     </select>
                   </div>
 
                   <div class="row">
-
                     <div class="col-md-6">
                       <label for="carId">Car Id</label>
                       <div class="form-group">
@@ -62,10 +69,10 @@
                           readonly
                           type="number"
                           id="carId"
-                          formControlName="carId"
                           class="form-control"
                           placeholder="Enter the number here"
                           [(ngModel)]="carId"
+                          formControlName="caridisi"
                         />
                       </div>
                     </div>
@@ -90,8 +97,9 @@
                           class="form-control"
                           min="{{ setRentDate() }}"
                           value="{{ setRentDate() }}"
-                          type="date"
+                          [(ngModel)]="rentDate"
                           formControlName="rentDate"
+                          type="date"
                         />
                       </div>
                     </div>
@@ -103,12 +111,12 @@
                           class="form-control"
                           min="{{ setReturnDate() }}"
                           value="{{ setReturnDate() }}"
-                          type="date"
+                          [(ngModel)]="returnDate"
                           formControlName="returnDate"
+                          type="date"
                         />
                       </div>
                     </div>
-                    
                   </div>
                 </form>
               </div>
@@ -130,7 +138,7 @@
           type="button"
           id="rent"
           class="btn btn-success"
-          (click)="add()"
+          (click)="processRental()"
           data-bs-dismiss="modal"
         >
           Rent Now

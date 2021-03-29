@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -31,6 +31,15 @@ import { CarListComponent } from './components/car-list/car-list.component';
 import { CarAddComponent } from './components/car-list/car-add/car-add.component';
 import { CarUpdateComponent } from './components/car-list/car-update/car-update.component';
 import { CreditCardComponent } from './components/credit-card/credit-card.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { UserComponent } from './components/user/user.component';
+import { DeleteAccountComponent } from './components/user/delete-account/delete-account.component';
+import { UserSettingsComponent } from './components/user/user-settings/user-settings.component';
+import { CarFilterPipe } from './pipes/car-filter.pipe';
+import { CcListComponent } from './components/credit-card/cc-list/cc-list.component';
+import { MyCardsComponent } from './components/user/my-cards/my-cards.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +65,15 @@ import { CreditCardComponent } from './components/credit-card/credit-card.compon
     CarListComponent,
     CarAddComponent,
     CarUpdateComponent,
-    CreditCardComponent
+    CreditCardComponent,
+    LoginComponent,
+    RegisterComponent,
+    UserComponent,
+    UserSettingsComponent,
+    DeleteAccountComponent,
+    CarFilterPipe,
+    CcListComponent,
+    MyCardsComponent
   ],
   imports: [
     BrowserModule,
@@ -69,7 +86,9 @@ import { CreditCardComponent } from './components/credit-card/credit-card.compon
       positionClass: 'toast-bottom-right',
     }),
   ],
-  providers: [],
+  providers: [
+    {provide:HTTP_INTERCEPTORS, useClass:AuthInterceptor, multi:true}
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

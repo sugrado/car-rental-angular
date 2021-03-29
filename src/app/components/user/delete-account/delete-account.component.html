@@ -1,0 +1,31 @@
+<div class="card card-fluid">
+  <h6 class="card-header">Delete Account</h6>
+  <div class="card-body">
+    <form [formGroup]="userDeleteForm">
+      <div class="mb-3">
+        <label for="userId2">E-mail</label>
+        <div class="form-group">
+          <input
+            readonly
+            type="userId2"
+            id="userId2"
+            formControlName="userId2"
+            class="form-control"
+            [ngModel]="user?.email"
+          />
+        </div>
+      </div>
+    </form>
+    <label>Click on the button for delete your account.</label>
+    <hr />
+    <div class="form-actions">
+      <button
+        type="submit"
+        class="btn btn-danger ml-auto"
+        (click)="deleteUser()"
+      >
+        Delete Account
+      </button>
+    </div>
+  </div>
+</div>

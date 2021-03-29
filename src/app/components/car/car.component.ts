@@ -7,6 +7,8 @@ import { Color } from 'src/app/models/color';
 import { BrandService } from 'src/app/services/brand.service';
 import { CarService } from 'src/app/services/car.service';
 import { ColorService } from 'src/app/services/color.service';
+import { LocalStorageService } from 'src/app/services/local-storage.service';
+import { RentService } from 'src/app/services/rent.service';
 
 @Component({
   selector: 'app-car',
@@ -25,9 +27,10 @@ export class CarComponent implements OnInit {
   constructor(
     private carService: CarService,
     private activatedRoute: ActivatedRoute,
-    private toastrService: ToastrService,
+    private rentService:RentService,
     private brandService: BrandService,
-    private colorService: ColorService
+    private colorService: ColorService,
+    private localStorageService:LocalStorageService
   ) {}
 
   ngOnInit(): void {
@@ -44,6 +47,9 @@ export class CarComponent implements OnInit {
     });
     this.getBrands();
     this.getColors();
+    this.localStorageService.removeItem("MFP");
+    this.localStorageService.removeItem("CustomerId");
+    this.rentService.clearRentalInfoCache();
   }
 
   getCars() {

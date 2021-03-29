@@ -10,8 +10,8 @@
     <app-color></app-color>
   </div>
 
-<div class="col-md-9">
-  <div *ngIf="dataLoaded == true" class="car">Cars</div>
+<div class="col-md-9" style="background-color: white;">
+  <div *ngIf="dataLoaded == true" class="car" style="margin: 2%;">Cars</div>
   <div class="row">
     <div class="col-md-4">
       <label> Brands </label>
@@ -54,6 +54,7 @@
         <th style="text-align: center;">Color</th>
         <th style="text-align: center;">Brand</th>
         <th style="text-align: center;">Daily Price</th>
+        <th style="text-align: center;">MFP</th>
         <th style="text-align: center;">Details</th>
       </tr>
     </thead>
@@ -61,6 +62,7 @@
       <td style="text-align: center;">{{ car.colorName }}</td>
       <td style="text-align: center;">{{ car.brandName }}</td>
       <td style="text-align: center;">{{ car.dailyPrice |currency}}</td>
+      <td style="text-align: center;">{{ car.minFindexPoint }}</td>
       <div align="center"><button routerLink="/cars/detail/{{car.id}}" type="button" class="btn btn-outline-primary" style="margin: 10px">View</button></div>
     </tr>
   </table>

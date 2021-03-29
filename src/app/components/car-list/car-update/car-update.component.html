@@ -1,7 +1,7 @@
 <br>
 <div *ngIf="car" class="content">
     <div class="col-md-12">
-      <div class="card">
+      <div class="card" style="background-color: rgba(255, 255, 255, 0.295); color: white;">
         <div class="card-header"><h5 class="title">Update</h5></div>
         <div class="card-body">
           <form [formGroup]="carUpdateForm">
@@ -45,6 +45,7 @@
                 />
               </div>
             </div>
+            
             <div class="mb-3">
               <label for="modelYear">Model Year</label>
               <div class="form-group">
@@ -84,10 +85,14 @@
           </form>
         </div>
         <div style="text-align: center" class="card-footer">
-          <button  class="btn btn-fill btn-primary" (click)="update()">
+          <button  class="btn btn-fill btn-warning" style="font-weight: bold;" (click)="update()">
             Update
           </button>
         </div>
+      </div>
+      <hr>
+      <div class="alert alert-warning" role="alert">
+        If some property values are not displayed, please refresh the page. 
       </div>
     </div>
   </div>

@@ -8,6 +8,7 @@ import {
 } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { ErrorHelper } from 'src/app/helpers/errorHelper';
 import { Car } from 'src/app/models/car';
 import { CarService } from 'src/app/services/car.service';
 
@@ -26,6 +27,7 @@ export class CarListComponent implements OnInit {
 
   cars: Car[] = [];
   carAddForm: FormGroup;
+  filterText = '';
 
   ngOnInit(): void {
     this.getCars();
@@ -50,9 +52,19 @@ export class CarListComponent implements OnInit {
   }
 
   deleteCar(car: Car) {
-    this.carService.deleteCar(car).subscribe((response) => {
-      this.toastrService.success(response.message, 'Car deleted');
-    });
-    setTimeout(() => {  window.location.reload(); }, 1000);
+    this.carService.deleteCar(car).subscribe(
+      (response) => {
+        this.toastrService.success(response.message, 'Car deleted');
+        setTimeout(() => {
+          window.location.reload();
+        }, 1000);
+      },
+      (responseError) => {
+        this.toastrService.error(
+          ErrorHelper.getMessage(responseError),
+          'Error'
+        );
+      }
+    );
   }
 }

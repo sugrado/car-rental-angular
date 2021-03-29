@@ -1,0 +1,16 @@
+<div class="row">
+    <div class="col-md-4">
+        <div class="card card-fluid">
+            <h6 class="card-header"> Your Details </h6>
+            <nav class="nav nav-tabs flex-column">
+              <div align="left"><a type = "button" routerLink="settings/{{getUserId()}}" class="nav-link active">Update Profile</a></div>
+              <div align="left"><a type = "button" routerLink="my-cards/{{getUserId()}}" class="nav-link active">My Credit Cards</a></div>
+              <div align="left"><a type = "button" routerLink="delete-account/{{getUserId()}}" class="nav-link active">Delete Account</a></div>
+            </nav>
+          </div>
+    </div>
+    <div class="col-md-8">
+      <router-outlet></router-outlet>
+    </div>
+</div>
+

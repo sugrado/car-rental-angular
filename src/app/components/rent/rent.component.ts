@@ -11,8 +11,10 @@ import { ErrorHelper } from 'src/app/helpers/errorHelper';
 import { Car } from 'src/app/models/car';
 import { CustomerDetail } from 'src/app/models/customerDetail';
 import { Rent } from 'src/app/models/rent';
+import { AuthService } from 'src/app/services/auth.service';
 import { CarService } from 'src/app/services/car.service';
 import { CustomerService } from 'src/app/services/customer.service';
+import { LocalStorageService } from 'src/app/services/local-storage.service';
 import { RentService } from 'src/app/services/rent.service';
 import { RentalService } from 'src/app/services/rental.service';
 
@@ -22,19 +24,23 @@ import { RentalService } from 'src/app/services/rental.service';
   styleUrls: ['./rent.component.css'],
 })
 export class RentComponent implements OnInit {
-  rentAddForm: FormGroup;
-  rental: Rent;
   car: Car;
   customers: CustomerDetail[] = [];
+  customerId: number;
+  rentDate: Date;
+  returnDate: Date;
+  rentAddForm: FormGroup;
 
   constructor(
-    private formBuilder: FormBuilder,
-    private rentService: RentService,
     private carService: CarService,
     private customerService: CustomerService,
     private activatedRoute: ActivatedRoute,
     private toastrService: ToastrService,
-    private router:Router
+    private localStorageService: LocalStorageService,
+    private router: Router,
+    private authService: AuthService,
+    private rentService: RentService,
+    private formBuilder: FormBuilder
   ) {}
 
   ngOnInit(): void {
@@ -45,18 +51,50 @@ export class RentComponent implements OnInit {
       }
       this.getCustomerDetails();
     });
-    this.createRentalAddFrom();
+    this.createRentalAddFrom()
   }
 
   carId!: number;
 
+  isAuth() {
+    if (this.authService.isAuthenticated()) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   createRentalAddFrom() {
     this.rentAddForm = this.formBuilder.group({
-      carId: ['', Validators.required],
+      caridisi: ['', Validators.required],
       customerId: ['', Validators.required],
       rentDate: ['', Validators.required],
       returnDate: ['', Validators.required],
     });
+  }
+
+  processRental() {
+    if (this.rentAddForm.valid) {
+      let newRental: Rent = {
+        rentDate: this.rentDate,
+        returnDate: this.returnDate,
+        carId: this.car.id,
+        customerId: this.customerId,
+      };
+      this.rentService.clearRentalInfoCache();
+
+      this.localStorageService.setItem('CustomerId', this.customerId.toString());
+      this.localStorageService.setItem('Rental', JSON.stringify(newRental));
+
+      this.toastrService.success(
+        'Process success. You are redirecting to payment page.'
+      );
+      setTimeout(() => {
+        this.router.navigate(['/payments/add']);
+      }, 2000);
+    }else{
+      this.toastrService.error("Please fill in the blanks.", "Error");
+    }
   }
 
   getCarDetails(id: number) {
@@ -81,25 +119,5 @@ export class RentComponent implements OnInit {
     var today = new Date();
     today.setDate(today.getDate() + 2);
     return today.toISOString().slice(0, 10);
-  }
-
-  add() {
-    console.log(this.rentAddForm);
-    if (this.rentAddForm.valid) {
-      let rentModel = Object.assign({}, this.rentAddForm.value);
-      this.rentService.add(rentModel).subscribe(
-        (response) => {
-          this.toastrService.success(response.message, 'You are redirecting to payment page.');
-          setTimeout(() => {
-            this.router.navigate(['payments/add']);
-          }, 3000);
-        },
-        (responseError) => {
-          this.toastrService.error(ErrorHelper.getMessage(responseError), "Error");
-        }
-      );
-    } else {
-      this.toastrService.error('Please fill in the blanks.', 'Error');
-    }
   }
 }

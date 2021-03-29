@@ -11,10 +11,22 @@
         <router-outlet></router-outlet>
     </div>
 
-    <div class="col-md-7">
-        <table class="table">
+    
+
+    <div class="col-md-7" style="background-color: rgba(255, 255, 255, 0.295);">
+        <div class="mb-3" style="margin-top: 10px">
+            <input
+              type="text"
+              [(ngModel)]="filterText"
+              class="form-control"
+              id="filterText"
+              placeholder="Search Car Id, Color, Brand, Daily Price or Model Year..."
+            />
+          </div>
+        <table class="table" style="color: white;">
             <thead>
                 <tr>
+                    <th style="text-align: center;">Car Id</th>
                     <th style="text-align: center;">Color</th>
                     <th style="text-align: center;">Brand</th>
                     <th style="text-align: center;">Daily Price</th>
@@ -24,14 +36,15 @@
                     <th style="text-align: center;"></th>
                 </tr>
             </thead>
-            <tr *ngFor="let car of cars" class = "hovers">
+            <tr *ngFor="let car of cars | carFilter: filterText" class = "hovers">
+                <td style="text-align: center;">{{ car.id }}</td>
                 <td style="text-align: center;">{{ car.colorName }}</td>
                 <td style="text-align: center;">{{ car.brandName }}</td>
                 <td style="text-align: center;">{{ car.dailyPrice |currency}}</td>
                 <td style="text-align: center;">{{ car.modelYear }}</td>
-                <button routerLink="/cars/detail/{{car.id}}" type="button" class="btn btn-outline-primary" style="margin: 10px">View</button>
-                <button routerLink="update-car/{{car.id}}" type="button" class="btn btn-outline-warning" style="margin: 10px">Update</button>
-                <button (click) = "deleteCar(car)" type="button" class="btn btn-outline-danger" style="margin: 10px">Delete</button>
+                <button routerLink="/cars/detail/{{car.id}}" type="button" class="btn btn-primary" style="margin: 10px">View</button>
+                <button routerLink="update-car/{{car.id}}" type="button" class="btn btn-warning" style="margin: 10px;">Update</button>
+                <button (click) = "deleteCar(car)" type="button" class="btn btn-danger" style="margin: 10px">Delete</button>
             </tr>
         </table>
     </div>

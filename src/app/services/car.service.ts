@@ -59,4 +59,9 @@ export class CarService {
     let newPath = this.apiUrl+ "cars/update"
     return this.httpClient.post<ResponseModel>(newPath,car);
   }
+
+  checkIfRentable(carId:number):Observable<boolean>{
+    let newPath = this.apiUrl+ "cars/checkifrentable?id=" + carId;
+    return this.httpClient.get<boolean>(newPath);
+  }
 }

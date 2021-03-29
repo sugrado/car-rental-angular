@@ -4,4 +4,5 @@ export interface CreditCard {
     cardNumber: string;
     expirationDate: number;
     cvvCode:number;
+    isSave:boolean;
   }

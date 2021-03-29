@@ -1,5 +1,5 @@
 <div class="modal-dialog modal-lg">
-  <div class="modal-content">
+  <div class="modal-content" style="background-color: rgba(255, 255, 255, 0.295); color: white;">
     <div class="modal-header">
       <h5 class="modal-title" id="staticBackdropLabel">Add New Car</h5>
     </div>
@@ -52,6 +52,17 @@
             </div>
           </div>
 
+          <label for="minFindexPoint">Minimum Findex Score</label>
+          <div class="form-group">
+            <input
+              type="number"
+              id="minFindexPoint"
+              formControlName="minFindexPoint"
+              class="form-control"
+              placeholder="Enter the car minimum findex point (0-1900)"
+            />
+          </div>
+
           <label for="description">Description</label>
           <div class="form-group">
             <input
@@ -68,8 +79,8 @@
         <a style="float: right">
           <button
             type="button"
-            class="btn btn-success"
-            style="float: right; margin: 10px"
+            class="btn btn-warning"
+            style="float: right; margin: 10px; font-weight: bold;"
             (click)="addCar()"
           >
             Add Car

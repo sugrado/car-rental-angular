@@ -3,4 +3,5 @@ export interface CustomerDetail{
     companyName:string;
     firstName:string;
     lastName:string;
+    findexPoint:number;
 }
