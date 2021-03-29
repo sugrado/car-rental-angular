@@ -37,9 +37,9 @@ Mar 29, 2021
 ![](ImagesForReadme/multiple_filter.png "multiple_filter")
 ![](ImagesForReadme/add_brand.png "add_brand")
 ![](ImagesForReadme/update_brand.png "update_brand")
-![](ImagesForReadme/navbar_menu.png "navbar_menu")
 ![](ImagesForReadme/login_navbar.png "login_navbar")
 ![](ImagesForReadme/not_login_navbar.png "not_login_navbar")
+![](ImagesForReadme/navbar_menu.png "navbar_menu")
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.3.
 
