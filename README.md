@@ -27,8 +27,8 @@ Mar 24, 2021
 ![](ImagesForReadme/profile_management_user_info.png)
 ![](ImagesForReadme/profile_management_cards.png)
 ![](ImagesForReadme/profile_management_delete_account.png)
-![](ImagesForReadme/change_password_wrong_old password.png)
-![](ImagesForReadme/change_password_true_old password.png)
+![](ImagesForReadme/change_password_wrong_old%20password.png)
+![](ImagesForReadme/change_password_true_old%20password.png)
 ![](ImagesForReadme/login_navbar.png)
 ![](ImagesForReadme/not_login_navbar.png)
 
