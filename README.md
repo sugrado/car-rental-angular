@@ -24,82 +24,82 @@ Mar 29, 2021
 - Successful paying users earn 100 findex points.(Başarılı ödeme gerçekleştirip araç kiralayan müşteriler 100 findex skoru kazanır.)  
 - Rental is not possible without payment.(Ödeme alınmadan kiralama işlemi gerçekleşmez. Veritabanına kaydolması için ödemenin yapılması gerekir.)  
 
-#Main Page (Ana sayfa)  
+# Main Page (Ana sayfa)  
 ![](ImagesForReadme/main_page.png "main_page")
 
-#Hover Card (Mouse ile bir aracın üstüne gelince)  
+# Hover Card (Mouse ile bir aracın üstüne gelince)  
 ![](ImagesForReadme/hover_card.png "hover_card")
 
-#Multiple Filter Car (Aynı anda renk ve marka filtrelemesi)  
+# Multiple Filter Car (Aynı anda renk ve marka filtrelemesi)  
 ![](ImagesForReadme/multiple_filter.png "multiple_filter")
 
-#Not Login Car Detail (Giriş yapılmadan araç detay sayfası)  
+# Not Login Car Detail (Giriş yapılmadan araç detay sayfası)  
 ![](ImagesForReadme/not_login_car_detail.png "not_login_car_detail")
 
-#Login Car Detail (Giriş yapıldıktan sonra araç detay sayfası)  
+# Login Car Detail (Giriş yapıldıktan sonra araç detay sayfası)  
 ![](ImagesForReadme/login_car_detail.png "login_car_detail")
 
-#Rental Create Page (Kira oluşturma sayfası)  
+# Rental Create Page (Kira oluşturma sayfası)  
 ![](ImagesForReadme/rental_create_page.png "rental_create_page")
 
-#Payment Page (Ödeme Sayfası)  
+# Payment Page (Ödeme Sayfası)  
 ![](ImagesForReadme/payment_page.png "payment_page")
 
-#Card Save Question (Kart kaydedilsin mi uyarısı)  
+# Card Save Question (Kart kaydedilsin mi uyarısı)  
 ![](ImagesForReadme/card_save_question_attention.png "card_save_question_attention")
 
-#Not Enough Findex Score (Findex skoru aracı kiralamak için yeterli değil)  
+# Not Enough Findex Score (Findex skoru aracı kiralamak için yeterli değil)  
 ![](ImagesForReadme/not_enough_findex_score.png "not_enough_findex_score")
 
-#Payment Success (Başarılı ödeme)  
+# Payment Success (Başarılı ödeme)  
 ![](ImagesForReadme/payment_success.png "payment_success")
 
-#VIP Customer (VIP müşteri bilgilendirmesi)  
+# VIP Customer (VIP müşteri bilgilendirmesi)  
 ![](ImagesForReadme/VIP_customer_1900_findex_score.png "VIP_customer_1900_findex_score")
 
-#Profile Managament Page (Kullanıcı bilgilerini güncelleme sayfası)  
+# Profile Managament Page (Kullanıcı bilgilerini güncelleme sayfası)  
 ![](ImagesForReadme/profile_management_user_info.png "profile_management_user_info")
 
-#Manage Credit Cards (Kayıtlı kredi kartlarını yönetme sayfası)  
+# Manage Credit Cards (Kayıtlı kredi kartlarını yönetme sayfası)  
 ![](ImagesForReadme/profile_management_cards.png "profile_management_cards")
 
-#Delete Account (Hesap silme seçeneği)  
+# Delete Account (Hesap silme seçeneği)  
 ![](ImagesForReadme/profile_management_delete_account.png "profile_management_delete_account")
 
-#Change Password Wrong Old Password (Parola değiştirirken hatalı eski şifre)  
+# Change Password Wrong Old Password (Parola değiştirirken hatalı eski şifre)  
 ![](ImagesForReadme/change_password_wrong_old%20password.png "change_password_wrong_old password")
 
-#Change Password True Old Password (Başarılı parola değiştirme)  
+# Change Password True Old Password (Başarılı parola değiştirme)  
 ![](ImagesForReadme/change_password_true_old%20password.png "change_password_true_old password")
 
-#Add Car Page (Araç ekleme sayfası)  
+# Add Car Page (Araç ekleme sayfası)  
 ![](ImagesForReadme/add_car.png "add_car")
 
-#Update Car Page (Araç güncelleme sayfası)  
+# Update Car Page (Araç güncelleme sayfası)  
 ![](ImagesForReadme/update_car.png "update_car")
 
-#Try Delete Using Car (Şuan kullanılan aracı silmeye çalışmak)  
+# Try Delete Using Car (Şuan kullanılan aracı silmeye çalışmak)  
 ![](ImagesForReadme/try_delete_using_car.png "try_delete_using_car")
 
-#Add Brand Page (Marka ekleme sayfası)  
+# Add Brand Page (Marka ekleme sayfası)  
 ![](ImagesForReadme/add_brand.png "add_brand")
 
-#Update Brand Page (Marka güncelleme sayfası)  
+# Update Brand Page (Marka güncelleme sayfası)  
 ![](ImagesForReadme/update_brand.png "update_brand")
 
-#Delete Brand Page (Marka silme sayfası)  
+# Delete Brand Page (Marka silme sayfası)  
 ![](ImagesForReadme/delete_brand.png "delete_brand")
 
-#Color Management Page. Similar with brand (Renk yönetim sayfası. Marka ile aynı özellikler.)  
+# Color Management Page. Similar with brand (Renk yönetim sayfası. Marka ile aynı özellikler.)  
 ![](ImagesForReadme/color_management.png "color_management")
 
-#Login Navbar (Giriş yapınca üst çubuk)  
+# Login Navbar (Giriş yapınca üst çubuk)  
 ![](ImagesForReadme/login_navbar.png "login_navbar")
 
-#Not Login Navbar (Giriş yapmayınca üst çubuk)  
+# Not Login Navbar (Giriş yapmayınca üst çubuk)  
 ![](ImagesForReadme/not_login_navbar.png "not_login_navbar")
 
-#User Options (Kullanıcı için sunulan seçenekler)  
+# User Options (Kullanıcı için sunulan seçenekler)  
 ![](ImagesForReadme/navbar_menu.png "navbar_menu")
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.3.
