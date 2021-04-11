@@ -25,6 +25,8 @@ export class CarUpdateComponent implements OnInit {
   brands: Brand[] = [];
   colors: Color[] = [];
   carUpdateForm: FormGroup;
+  filterText1 = "";
+  filterText2 = "";
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -68,6 +70,7 @@ export class CarUpdateComponent implements OnInit {
       modelYear: ['', Validators.required],
       dailyPrice: ['', Validators.required],
       description: ['', Validators.required],
+      minFindexPoint: ['', Validators.required],
     });
   }
 

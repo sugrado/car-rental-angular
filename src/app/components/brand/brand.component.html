@@ -14,11 +14,11 @@
   />
 </div>
 
-<ul class="list-group" >
-  <!-- <li (click)="resetCurrentBrand()" routerLink="/cars" class="list-group-item">
-    All
-  </li> -->
-  <li
+<ul class="list-group">
+  <li (click)="resetCurrentBrand()" routerLink="/cars" class="list-group-item tprent">
+    All Brands
+  </li>
+  <li class="tprent"
     (click)="setCurrentBrand(brand)"
     [class]="getCurrentBrandClass(brand)"
     *ngFor="let brand of brands | brandFilter: filterText"

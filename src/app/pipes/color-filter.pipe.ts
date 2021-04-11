@@ -8,7 +8,8 @@ export class ColorFilterPipe implements PipeTransform {
 
   transform(value: Color[], filterText: string): Color[] {
     filterText = filterText?filterText.toLocaleLowerCase():"";
-    return filterText?value.filter((p:Color)=>p.colorName.toLocaleLowerCase().indexOf(filterText)!==-1):value;
+    return filterText? (value.filter((p:Color)=>p.colorName.toLocaleLowerCase().indexOf(filterText)!==-1 ||
+    p.colorId.toString().indexOf(filterText)!==-1)):value;
   }
 
 }

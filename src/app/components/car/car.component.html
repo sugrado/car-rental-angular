@@ -2,72 +2,85 @@
   <span class="visually-hidden">Loading...</span>
 </div>
 
-
-
 <div class="row">
-  <div class = "col-md-3">
+  <div class="col-md-3">
     <app-brand></app-brand>
     <app-color></app-color>
   </div>
 
-<div class="col-md-9" style="background-color: white;">
-  <div *ngIf="dataLoaded == true" class="car" style="margin: 2%;">Cars</div>
-  <div class="row">
-    <div class="col-md-4">
-      <label> Brands </label>
-      <select class="form-select" [(ngModel)]="brandId">
-        <option
-          [value]="brand.brandId"
-          *ngFor="let brand of brands"
-          [selected]="setSelectedBrandId(brand.brandId)"
-        >
-          {{ brand.brandName }}
-        </option>
-      </select>
-    </div>
-    <div class="col-md-4">
-      <label> Colors </label>
-      <select class="form-select" [(ngModel)]="colorId" aria-placeholder="All Colors">
-        <option
-          *ngFor="let color of colors"
-          [value]="color.colorId"
-          [selected]="setSelectedColorId(color.colorId)"
-        >
-          {{ color.colorName }}
-        </option>
-      </select>
-    </div>
-    <div class="col-md-4">
-      <br>
-      <button
-        class="btn btn-success"
-        routerLink="/cars/filter/{{ brandId }}/{{ colorId }}"
-      >
-        Filter
-      </button>
-    </div>
-  </div>
-  
-  <table class="table" *ngIf="dataLoaded != false">
-    <thead>
-      <tr>
-        <th style="text-align: center;">Color</th>
-        <th style="text-align: center;">Brand</th>
-        <th style="text-align: center;">Daily Price</th>
-        <th style="text-align: center;">MFP</th>
-        <th style="text-align: center;">Details</th>
-      </tr>
-    </thead>
-    <tr *ngFor="let car of cars" class = "hovers" routerLink="/cars/detail/{{car.id}}"> 
-      <td style="text-align: center;">{{ car.colorName }}</td>
-      <td style="text-align: center;">{{ car.brandName }}</td>
-      <td style="text-align: center;">{{ car.dailyPrice |currency}}</td>
-      <td style="text-align: center;">{{ car.minFindexPoint }}</td>
-      <div align="center"><button routerLink="/cars/detail/{{car.id}}" type="button" class="btn btn-outline-primary" style="margin: 10px">View</button></div>
-    </tr>
-  </table>
-  
-</div>
+  <div class="col-md-9">
+    
+    <div *ngIf="dataLoaded == true" class="car" style="margin-top: 11px;">Cars</div>
 
+    <div class="row" style="margin:10px; background-color: rgba(255, 255, 255, 0.37); padding-bottom: 10px; border-radius: 5px; color: white;">
+      <div class="col-md-4">
+        <label> Brands </label>
+        <select class="form-select" [(ngModel)]="brandId">
+          <option value=0>All Brands</option>
+          <option
+            [value]="brand.brandId"
+            *ngFor="let brand of brands"
+            [selected]="setSelectedBrandId(brand.brandId)"
+          >
+            {{ brand.brandName }}
+          </option>
+        </select>
+      </div>
+      <div class="col-md-4">
+        <label> Colors </label>
+        <select class="form-select" [(ngModel)]="colorId" aria-placeholder="All Colors">
+          <option value=0>All Colors</option>
+          <option
+            *ngFor="let color of colors"
+            [value]="color.colorId"
+            [selected]="setSelectedColorId(color.colorId)"
+          >
+            {{ color.colorName }}
+          </option>
+        </select>
+      </div>
+      <div class="col-md-4">
+        <br>
+        <button
+          class="btn btn-warning"
+          routerLink="/cars/filter/{{ brandId }}/{{ colorId }}"
+        >
+          Filter
+        </button>
+      </div>
+    </div>
+
+    
+    
+    <div class="row" style="margin-left: 15px;">
+      <div class="card card2" style="width: 18rem;" *ngFor="let car of cars" routerLink="/cars/detail/{{car.id}}">
+        <img src="{{apiUrl}}{{car.coverPhoto}}" class="card-img-top " alt="{{car.brandName}}" height="160" style="border-radius: 5px; margin-top: 10px;">
+        <div class="card-body">
+
+          <table class="table" style="color: white;">
+            <tbody>
+              <tr>
+                <th scope="row">Brand:</th>
+                <td>{{ car.brandName }}</td>
+              </tr>
+              <tr>
+                <th scope="row">Color:</th>
+                <td>{{ car.colorName }}</td>
+              </tr>
+              <tr>
+                <th scope="row">Model Year:</th>
+                <td>{{ car.modelYear }}</td>
+              </tr>
+              <tr>
+                <th scope="row">Daily Price:</th>
+                <td>{{car.dailyPrice |currency}}</td>
+              </tr>
+            </tbody>
+          </table>
+          <div align="center"><button routerLink="/cars/detail/{{car.id}}" type="button" class="btn btn-info" style="margin: 10px">View and Rent</button></div>
+        </div>
+      </div>
+    </div>
+  </div> 
 </div>
 

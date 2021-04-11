@@ -51,8 +51,8 @@ export class LoginComponent implements OnInit {
         (response) => {
           this.toastrService.success(response.message, 'Information');
           this.localStorageService.setItem('token', response.data.token);
-          
-          setTimeout(() => {  this.router.navigate([""]); }, 1000);
+          setTimeout(() => { window.location.reload()  }, 1000);
+          this.router.navigate([""]);
         },
         (responseError) => {
           this.toastrService.error(

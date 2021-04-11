@@ -1,9 +1,14 @@
 .color {
     font-weight: bold;
-    background-color: rgb(68, 158, 50);
+    background-color: rgba(68, 158, 50, 0.658);
     color: white;
     text-align: center;
     margin-top: 20px;
     padding: 10px;
     border-radius: 5px;
+}
+
+.tprent{
+    background-color: rgba(255, 255, 255, 0.37); 
+    color: white;
 }

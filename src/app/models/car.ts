@@ -8,5 +8,5 @@ export interface Car{
     dailyPrice:number;
     minFindexPoint:number;
     description:string;
-    status: boolean;
+    coverPhoto:string;
 }

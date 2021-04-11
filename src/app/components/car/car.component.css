@@ -1,12 +1,20 @@
 .car{
     font-weight: bold;
-    background-color: #0D6EFD;
+    background-color: #0d6dfd9f;
     color: white;
     text-align: center;
     padding: 10px;
     border-radius: 5px;
 }
 
-.hovers:hover{
-    background-color:rgba(186, 187, 182, 0.863);
+.card2:hover{
+    box-shadow: 0 0 0 2pt rgb(72, 255, 0);
+    cursor: pointer;
+    margin: 10px; 
+    background-color: rgba(255, 255, 255, 0.37);
+}
+
+.card2 {
+    margin: 10px; 
+    background-color: rgba(255, 255, 255, 0.37);
 }

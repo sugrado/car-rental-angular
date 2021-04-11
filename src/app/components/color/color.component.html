@@ -15,10 +15,10 @@
 </div>
 
 <ul class="list-group">
-  <!-- <li (click)="resetCurrentColor()" routerLink="/cars" class="list-group-item">
+  <li (click)="resetCurrentColor()" routerLink="/cars" class="list-group-item tprent">
     All
-  </li> -->
-  <li
+  </li>
+  <li class="tprent"
     (click)="setCurrentColor(color)"
     [class]="getCurrentColorClass(color)"
     *ngFor="let color of colors | colorFilter: filterText"
