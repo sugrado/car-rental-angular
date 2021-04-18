@@ -1,5 +1,8 @@
 # CarRentalNg  
 
+   <a href = "https://www.linkedin.com/in/sugrado/"><img src = "ImagesForReadme/linkedin.jpg" width = "85" height = "50" alt = "My Linkedin Profile"/></a>
+My e-mail address: gorkemarik2018@gmail.com
+
 Scroll down for images. (Fotoğraflar için aşağı kaydırın.)  
 
 # Apr 11, 2021  
