@@ -3,7 +3,7 @@
 Scroll down for images. (Fotoğraflar için aşağı kaydırın.)  
 
 # Apr 11, 2021  
-  **(English)**  
+  **(English)**
 - Added edit MFP(min. findex point) in car update page.  
 - Design improved.  
 - Switched from list view to card view in home page.(The ability to change the view to the user's request will be added soon.)  
@@ -15,7 +15,7 @@ Scroll down for images. (Fotoğraflar için aşağı kaydırın.)
 - Araç güncelleme sayfasına bilgi amaçlı marka ve renk kimlik numaraları eklendi.  
   
 # Mar 29, 2021  
-  **(English)**  
+  **(English)**
 - Dark theme in action.
 - Login / Register properties added.  
 - Findex-score system added.  
@@ -43,7 +43,7 @@ Scroll down for images. (Fotoğraflar için aşağı kaydırın.)
 - Ödeme alınmadan kiralama işlemi gerçekleşmez. Veritabanına kaydolması için ödemenin yapılması gerekir.  
 
 # Mar 24, 2021  
-  **(English)**  
+  **(English)**
 - Rental feature.  
 - CRUD operations for entities with Reactive Forms.  
 - Added payment page.  
@@ -57,7 +57,7 @@ Scroll down for images. (Fotoğraflar için aşağı kaydırın.)
 - Toastr desteği eklendi.  
   
 # Mar 17, 2021  
-  **(English)**  
+  **(English)**
 - Added car detail page.  
 - Added brand and color filter change.  
 - Navbar made available.  
@@ -67,7 +67,7 @@ Scroll down for images. (Fotoğraflar için aşağı kaydırın.)
 - Üst çubuk kullanılabilir hale getirildi.  
   
 # Mar 12, 2021  
-  **(English)**  
+  **(English)**
 - Added project files.  
 **(Türkçe)**  
 - Proje dosyaları eklendi.  
