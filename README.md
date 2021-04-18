@@ -2,41 +2,89 @@
 
 Scroll down for images. (Fotoğraflar için aşağı kaydırın.)  
 
-Apr 11, 2021  (Nis 11, 2021)  
+# Apr 11, 2021  (Nis 11, 2021)  
+  (English)  
+- Added edit MFP(min. findex point) in car update page.  
+- Design improved.  
+- Switched from list view to card view in home page.(The ability to change the view to the user's request will be added soon.)  
+- Brand and color id information added to the vehicle update page.  
+  (Türkçe)  
+- Araç güncelleme sayfasına MFP düzenleme seçeneği eklendi.  
+- Tasarım iyileştirildi.  
+- Liste görünümünden kart görünümüne geçildi. Kullanıcı isteğine göre görünüm değiştirebilme özelliği eklenecek.  
+- Araç güncelleme sayfasına bilgi amaçlı marka ve renk kimlik numaraları eklendi.  
   
-- Added edit MFP(min. findex point) in car update page.(Araç güncelleme sayfasına MFP düzenleme seçeneği eklendi.)  
-- Design improved.(Tasarım iyileştirildi.)  
-- Switched from list view to card view in home page.(Liste görünümünden kart görünümüne geçildi. Kullanıcı isteğine göre görünüm değiştirebilme özelliği eklenecek.)  
-- Brand and color id information added to the vehicle update page.(Araç güncelleme sayfasına bilgi amaçlı marka ve renk kimlik numaraları eklendi.)  
-
-Mar 29, 2021  
-  
-- Dark theme in action.(Karanlık Temaya geçildi.)  
-- Login / Register properties added.(Giriş yapma ve kayıt olma özellikleri getirildi.)  
-- Findex-score system added.(Findex skor sistemi eklendi.)  
-- Customers whose findex score is less than the MFP of the vehicle cannot rent a car.(Findex skoru kiralamak istenilen aracın MFP'sinden düşük ise müşteri araç kiralayamaz.)  
-- Customers who reach the 1900 findex record become VIP customers.(1900 findex skoruna ulaşan kullanıcılar VIP müşteri sınıfına girer.)  
-- The names of the logged-in users are written on the navbar, for non-logged in users there will be login / register buttons on the navbar.(Navbar'da giriş yapılmışsa giriş yapan kişinin adı ve profil seçenekleri çıkar. Giriş yapılmamışsa giriş yap / kayıt ol seçenekleri gözükür.)  
+# Mar 29, 2021  
+  (English)  
+- Dark theme in action.
+- Login / Register properties added.  
+- Findex-score system added.  
+- Customers whose findex score is less than the MFP of the vehicle cannot rent a car.   
+- Customers who reach the 1900 findex record become VIP customers.  
+- The names of the logged-in users are written on the navbar, for non-logged in users there will be login / register buttons on the navbar.  
 - Login is required to rent a car.(Araç kiralamak için sisteme giriş yapılmalıdır.)  
-- Users can view and update their information.(Kullanıcılar bilgilerini görüp güncelleyebilir, hesaplarını silebilirler.) (First Name, Last Name, E-mail, Password, Credit-Cards, Delete Account)  
-- Users have the option to save their credit card for subsequent purchases.(Ödeme esnasında müşteri isterse kredi kartını bir sonraki ödemede kullanabilmek için kaydedebilir.)  
-- It is not allowed to rent a car within the date range rented by someone else.(Araç seçilen tarihler arasında başka birisi tarafından kiralanmışsa kiralanamaz.)  
-- Successful paying users earn 100 findex points.(Başarılı ödeme gerçekleştirip araç kiralayan müşteriler 100 findex skoru kazanır.)  
-- Rental is not possible without payment.(Ödeme alınmadan kiralama işlemi gerçekleşmez. Veritabanına kaydolması için ödemenin yapılması gerekir.)  
+- Users can view and update their information. (First Name, Last Name, E-mail, Password, Credit-Cards, Delete Account)  
+- Users have the option to save their credit card for subsequent purchases.  
+- It is not allowed to rent a car within the date range rented by someone else.  
+- Successful paying users earn 100 findex score.  
+- Rental is not possible without payment.  
+  (Türkçe)  
+- Karanlık temaya geçildi.  
+- Giriş yapma ve kayıt olma özellikleri getirildi.  
+- Findex skor sistemi eklendi.  
+- Findex skoru kiralamak istenilen aracın MFP'sinden düşük ise müşteri araç kiralayamaz.  
+- 1900 findex skoruna ulaşan kullanıcılar VIP müşteri sınıfına girer.  
+- Navbar'da giriş yapılmışsa giriş yapan kişinin adı ve profil seçenekleri çıkar. Giriş yapılmamışsa giriş yap / kayıt ol seçenekleri gözükür.  
+- Araç kiralamak için sisteme giriş yapılmalıdır.  
+- Kullanıcılar bilgilerini görüp güncelleyebilir, hesaplarını silebilirler. (Ad, Soyad, E-posta, Şifre, Kredi Kartları, Hesap Silme)  
+- Ödeme esnasında müşteri isterse kredi kartını bir sonraki ödemede kullanabilmek için kaydedebilir.  
+- Araç seçilen tarihler arasında başka birisi tarafından kiralanmışsa kiralanamaz.  
+- Başarılı ödeme gerçekleştirip araç kiralayan müşteriler 100 findex skoru kazanır.  
+- Ödeme alınmadan kiralama işlemi gerçekleşmez. Veritabanına kaydolması için ödemenin yapılması gerekir.  
+
+# Mar 24, 2021  
+  (English)  
+- Rental feature.  
+- CRUD operations for entities with Reactive Forms.  
+- Added payment page.  
+- Search feature with Pipes.  
+- Added Toastr support.  
+  (Türkçe)  
+- Araç kiralama özelliği eklendi.  
+- Reactive Form'lar kullanılarak nesnelere (marka, renk, araba, kira) CRUD (Oluşturma, okuma, güncelleme, silme) operasyonları eklendi.  
+- Ödeme sayfası eklendi.  
+- Pipe kullanılarak marka ve renk aratma özelliği eklendi.  
+- Toastr desteği eklendi.  
+  
+# Mar 17, 2021  
+  (English)  
+- Added car detail page.  
+- Added brand and color filter change.  
+- Navbar made available.  
+  (Türkçe)  
+- Araç detay sayfası eklendi.  
+- Renk ve markaya göre (tekli) filtreleme özelliği eklendi.  
+- Üst çubuk kullanılabilir hale getirildi.  
+  
+# Mar 12, 2021  
+  (English)  
+- Added project files.  
+  (Türkçe)  
+- Proje dosyaları eklendi.  
 
 # Main Page (Ana sayfa)  
 ![](ImagesForReadme/main_page.png "main_page")
 
-# Hover Card (Mouse ile bir aracın üstüne gelince)  
+# Hover Effect (Mouse ile bir aracın üstüne gelince)  
 ![](ImagesForReadme/hover_card.png "hover_card")
 
-# Multiple Filter Car (Aynı anda renk ve marka filtrelemesi)  
+# Multiple Filtering (Aynı anda renk ve marka filtrelemesi)  
 ![](ImagesForReadme/multiple_filter.png "multiple_filter")
 
-# Not Login Car Detail (Giriş yapılmadan araç detay sayfası)  
+# Car detail page without login. (Giriş yapılmadan araç detay sayfası)  
 ![](ImagesForReadme/not_login_car_detail.png "not_login_car_detail")
 
-# Login Car Detail (Giriş yapıldıktan sonra araç detay sayfası)  
+# Car detail page with login. (Giriş yapıldıktan sonra araç detay sayfası)  
 ![](ImagesForReadme/login_car_detail.png "login_car_detail")
 
 # Rental Create Page (Kira oluşturma sayfası)  
@@ -54,7 +102,7 @@ Mar 29, 2021
 # Payment Success (Başarılı ödeme)  
 ![](ImagesForReadme/payment_success.png "payment_success")
 
-# VIP Customer (VIP müşteri bilgilendirmesi)  
+# VIP Customer Information (VIP müşteri bilgilendirmesi)  
 ![](ImagesForReadme/VIP_customer_1900_findex_score.png "VIP_customer_1900_findex_score")
 
 # Profile Managament Page (Kullanıcı bilgilerini güncelleme sayfası)  
@@ -66,37 +114,37 @@ Mar 29, 2021
 # Delete Account (Hesap silme seçeneği)  
 ![](ImagesForReadme/profile_management_delete_account.png "profile_management_delete_account")
 
-# Change Password Wrong Old Password (Parola değiştirirken hatalı eski şifre)  
+# Wrong old password warning while changing the password. (Parola değiştirirken hatalı eski şifre)  
 ![](ImagesForReadme/change_password_wrong_old%20password.png "change_password_wrong_old password")
 
-# Change Password True Old Password (Başarılı parola değiştirme)  
+# Password changed succesfully. (Başarılı parola değiştirme)  
 ![](ImagesForReadme/change_password_true_old%20password.png "change_password_true_old password")
 
-# Add Car Page (Araç ekleme sayfası)  
+# Car Add Page (Araç ekleme sayfası)  
 ![](ImagesForReadme/add_car.png "add_car")
 
-# Update Car Page (Araç güncelleme sayfası)  
+# Car Update Page (Araç güncelleme sayfası)  
 ![](ImagesForReadme/update_car.png "update_car")
 
-# Try Delete Using Car (Şuan kullanılan aracı silmeye çalışmak)  
+# Trying to delete the currently used vehicle. (Şuan kullanılan aracı silmeye çalışmak)  
 ![](ImagesForReadme/try_delete_using_car.png "try_delete_using_car")
 
-# Add Brand Page (Marka ekleme sayfası)  
+# Brand Add Page (Marka ekleme sayfası)  
 ![](ImagesForReadme/add_brand.png "add_brand")
 
-# Update Brand Page (Marka güncelleme sayfası)  
+# Brand Update Page (Marka güncelleme sayfası)  
 ![](ImagesForReadme/update_brand.png "update_brand")
 
-# Delete Brand Page (Marka silme sayfası)  
+# Brand Delete Page (Marka silme sayfası)  
 ![](ImagesForReadme/delete_brand.png "delete_brand")
 
 # Color Management Page. Similar with brand (Renk yönetim sayfası. Marka ile aynı özellikler.)  
 ![](ImagesForReadme/color_management.png "color_management")
 
-# Login Navbar (Giriş yapınca üst çubuk)  
+# Navbar with login. (Giriş yapınca üst çubuk)  
 ![](ImagesForReadme/login_navbar.png "login_navbar")
 
-# Not Login Navbar (Giriş yapmayınca üst çubuk)  
+# Navbar without login. (Giriş yapmayınca üst çubuk)  
 ![](ImagesForReadme/not_login_navbar.png "not_login_navbar")
 
 # User Options (Kullanıcı için sunulan seçenekler)  
