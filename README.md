@@ -3,19 +3,19 @@
 Scroll down for images. (Fotoğraflar için aşağı kaydırın.)  
 
 # Apr 11, 2021  
-  **(English)**
+-->**(English)**
 - Added edit MFP(min. findex point) in car update page.  
 - Design improved.  
 - Switched from list view to card view in home page.(The ability to change the view to the user's request will be added soon.)  
 - Brand and color id information added to the vehicle update page.  
-**(Türkçe)**  
+-->**(Türkçe)**  
 - Araç güncelleme sayfasına MFP düzenleme seçeneği eklendi.  
 - Tasarım iyileştirildi.  
 - Liste görünümünden kart görünümüne geçildi. Kullanıcı isteğine göre görünüm değiştirebilme özelliği eklenecek.  
 - Araç güncelleme sayfasına bilgi amaçlı marka ve renk kimlik numaraları eklendi.  
   
 # Mar 29, 2021  
-  **(English)**
+-->**(English)**
 - Dark theme in action.
 - Login / Register properties added.  
 - Findex-score system added.  
@@ -28,7 +28,7 @@ Scroll down for images. (Fotoğraflar için aşağı kaydırın.)
 - It is not allowed to rent a car within the date range rented by someone else.  
 - Successful paying users earn 100 findex score.  
 - Rental is not possible without payment.  
-**(Türkçe)**  
+-->**(Türkçe)**  
 - Karanlık temaya geçildi.  
 - Giriş yapma ve kayıt olma özellikleri getirildi.  
 - Findex skor sistemi eklendi.  
@@ -43,13 +43,13 @@ Scroll down for images. (Fotoğraflar için aşağı kaydırın.)
 - Ödeme alınmadan kiralama işlemi gerçekleşmez. Veritabanına kaydolması için ödemenin yapılması gerekir.  
 
 # Mar 24, 2021  
-  **(English)**
+-->**(English)**
 - Rental feature.  
 - CRUD operations for entities with Reactive Forms.  
 - Added payment page.  
 - Search feature with Pipes.  
 - Added Toastr support.  
-**(Türkçe)**  
+-->**(Türkçe)**  
 - Araç kiralama özelliği eklendi.  
 - Reactive Form'lar kullanılarak nesnelere (marka, renk, araba, kira) CRUD (Oluşturma, okuma, güncelleme, silme) operasyonları eklendi.  
 - Ödeme sayfası eklendi.  
@@ -57,19 +57,19 @@ Scroll down for images. (Fotoğraflar için aşağı kaydırın.)
 - Toastr desteği eklendi.  
   
 # Mar 17, 2021  
-  **(English)**
+-->**(English)**
 - Added car detail page.  
 - Added brand and color filter change.  
 - Navbar made available.  
-**(Türkçe)**  
+-->**(Türkçe)**  
 - Araç detay sayfası eklendi.  
 - Renk ve markaya göre (tekli) filtreleme özelliği eklendi.  
 - Üst çubuk kullanılabilir hale getirildi.  
   
 # Mar 12, 2021  
-  **(English)**
+-->**(English)**
 - Added project files.  
-**(Türkçe)**  
+-->**(Türkçe)**  
 - Proje dosyaları eklendi.  
 
 # Main Page (Ana sayfa)  
