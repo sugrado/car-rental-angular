@@ -8,6 +8,7 @@ Scroll down for images. (Fotoğraflar için aşağı kaydırın.)
 - Design improved.  
 - Switched from list view to card view in home page.(The ability to change the view to the user's request will be added soon.)  
 - Brand and color id information added to the vehicle update page.  
+  
 -->**(Türkçe)**  
 - Araç güncelleme sayfasına MFP düzenleme seçeneği eklendi.  
 - Tasarım iyileştirildi.  
@@ -28,6 +29,7 @@ Scroll down for images. (Fotoğraflar için aşağı kaydırın.)
 - It is not allowed to rent a car within the date range rented by someone else.  
 - Successful paying users earn 100 findex score.  
 - Rental is not possible without payment.  
+  
 -->**(Türkçe)**  
 - Karanlık temaya geçildi.  
 - Giriş yapma ve kayıt olma özellikleri getirildi.  
@@ -49,6 +51,7 @@ Scroll down for images. (Fotoğraflar için aşağı kaydırın.)
 - Added payment page.  
 - Search feature with Pipes.  
 - Added Toastr support.  
+  
 -->**(Türkçe)**  
 - Araç kiralama özelliği eklendi.  
 - Reactive Form'lar kullanılarak nesnelere (marka, renk, araba, kira) CRUD (Oluşturma, okuma, güncelleme, silme) operasyonları eklendi.  
@@ -61,6 +64,7 @@ Scroll down for images. (Fotoğraflar için aşağı kaydırın.)
 - Added car detail page.  
 - Added brand and color filter change.  
 - Navbar made available.  
+  
 -->**(Türkçe)**  
 - Araç detay sayfası eklendi.  
 - Renk ve markaya göre (tekli) filtreleme özelliği eklendi.  
@@ -69,6 +73,7 @@ Scroll down for images. (Fotoğraflar için aşağı kaydırın.)
 # Mar 12, 2021  
 -->**(English)**
 - Added project files.  
+  
 -->**(Türkçe)**  
 - Proje dosyaları eklendi.  
 
