@@ -1,5 +1,4 @@
-import { ThisReceiver } from '@angular/compiler';
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { Car } from 'src/app/models/car';
@@ -22,7 +21,7 @@ export class CarDetailComponent implements OnInit {
   constructor(
     private carService: CarService,
     private activatedRoute: ActivatedRoute,
-    private localStorageService:LocalStorageService,
+    private localStorageService: LocalStorageService,
     private _location: Location
   ) {}
 
@@ -38,7 +37,10 @@ export class CarDetailComponent implements OnInit {
   getCarDetails(id: number) {
     this.carService.getCarDetailById(id).subscribe((response) => {
       this.car = response.data;
-      this.localStorageService.setItem("MFP", this.car.minFindexPoint.toString())
+      this.localStorageService.setItem(
+        'MFP',
+        this.car.minFindexPoint.toString()
+      );
       this.carId = response.data.id;
       this.dataLoaded = true;
     });

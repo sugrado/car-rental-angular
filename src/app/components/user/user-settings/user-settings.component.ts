@@ -1,17 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
-import {
-  FormGroup,
-  FormBuilder,
-  FormControl,
-  Validators,
-} from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { ErrorHelper } from 'src/app/helpers/errorHelper';
 import { PasswordModel } from 'src/app/models/passwordModel';
 import { User } from 'src/app/models/user';
 import { AuthService } from 'src/app/services/auth.service';
-import { LocalStorageService } from 'src/app/services/local-storage.service';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -22,17 +16,16 @@ import { UserService } from 'src/app/services/user.service';
 export class UserSettingsComponent implements OnInit {
   userUpdateForm: FormGroup;
   passUpdateForm: FormGroup;
-  user:User;
-  userEmail:string;
-  @Input() userId:number
+  user: User;
+  userEmail: string;
+  @Input() userId: number;
 
   constructor(
     private authService: AuthService,
     private formBuilder: FormBuilder,
     private toastrService: ToastrService,
-    private localStorageService: LocalStorageService,
     private userService: UserService,
-    private activatedRoute : ActivatedRoute
+    private activatedRoute: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
@@ -47,9 +40,9 @@ export class UserSettingsComponent implements OnInit {
     this.getUser();
   }
 
- createUserUpdateForm() {
+  createUserUpdateForm() {
     this.userUpdateForm = this.formBuilder.group({
-      id:this.userId,
+      id: this.userId,
       email: ['', Validators.required],
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
@@ -64,7 +57,10 @@ export class UserSettingsComponent implements OnInit {
           this.user = response.data;
         },
         (responseError) => {
-          this.toastrService.error(ErrorHelper.getMessage(responseError), "Error");
+          this.toastrService.error(
+            ErrorHelper.getMessage(responseError),
+            'Error'
+          );
         }
       );
     }
@@ -72,7 +68,7 @@ export class UserSettingsComponent implements OnInit {
 
   createPassUpdateForm() {
     this.passUpdateForm = this.formBuilder.group({
-      userEmail:this.userEmail,
+      userEmail: this.userEmail,
       oldPass: ['', Validators.required],
       newPass: ['', Validators.required],
     });
@@ -84,7 +80,9 @@ export class UserSettingsComponent implements OnInit {
       this.userService.updateUser(userModel).subscribe(
         (response) => {
           this.toastrService.success(response.message, 'Updated successfully');
-          setTimeout(() => {window.location.reload()}, 1000);
+          setTimeout(() => {
+            window.location.reload();
+          }, 1000);
         },
         (responseError) => {
           this.toastrService.error(
@@ -100,11 +98,16 @@ export class UserSettingsComponent implements OnInit {
 
   updatePass() {
     if (this.passUpdateForm.valid) {
-      let passModel: PasswordModel = Object.assign({},this.passUpdateForm.value);
+      let passModel: PasswordModel = Object.assign(
+        {},
+        this.passUpdateForm.value
+      );
       this.authService.changePassword(passModel).subscribe(
         (response) => {
           this.toastrService.success(response.message, 'Success');
-          setTimeout(() => {window.location.reload()}, 1000);
+          setTimeout(() => {
+            window.location.reload();
+          }, 1000);
         },
         (responseError) => {
           this.toastrService.error(

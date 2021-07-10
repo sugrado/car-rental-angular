@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ToastrService } from 'ngx-toastr';
 import { Brand } from 'src/app/models/brand';
 import { Car } from 'src/app/models/car';
-import { CarImage } from 'src/app/models/carImage';
 import { Color } from 'src/app/models/color';
 import { BrandService } from 'src/app/services/brand.service';
 import { CarService } from 'src/app/services/car.service';
@@ -21,23 +19,23 @@ export class CarComponent implements OnInit {
   dataLoaded = false;
   brands: Brand[] = [];
   colors: Color[] = [];
-  colorId:number = 0;
-  brandId:number = 0;
+  colorId: number = 0;
+  brandId: number = 0;
   apiUrl = 'https://localhost:44350';
 
   constructor(
     private carService: CarService,
     private activatedRoute: ActivatedRoute,
-    private rentService:RentService,
+    private rentService: RentService,
     private brandService: BrandService,
     private colorService: ColorService,
-    private localStorageService:LocalStorageService
+    private localStorageService: LocalStorageService
   ) {}
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
       if (params['brandId'] && params['colorId']) {
-        this.getCarsByBrandAndColor(params['brandId'], params['colorId'])
+        this.getCarsByBrandAndColor(params['brandId'], params['colorId']);
       } else if (params['colorId']) {
         this.getCarsByColor(params['colorId']);
       } else if (params['brandId']) {
@@ -48,8 +46,8 @@ export class CarComponent implements OnInit {
     });
     this.getBrands();
     this.getColors();
-    this.localStorageService.removeItem("MFP");
-    this.localStorageService.removeItem("CustomerId");
+    this.localStorageService.removeItem('MFP');
+    this.localStorageService.removeItem('CustomerId');
     this.rentService.clearRentalInfoCache();
   }
 

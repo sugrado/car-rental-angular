@@ -1,12 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  FormGroup,
-  FormBuilder,
-  FormControl,
-  Validator,
-  Validators,
-} from '@angular/forms';
-import { Router } from '@angular/router';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { ErrorHelper } from 'src/app/helpers/errorHelper';
 import { Brand } from 'src/app/models/brand';
@@ -32,8 +25,7 @@ export class CarAddComponent implements OnInit {
     private toastrService: ToastrService,
     private carService: CarService,
     private brandService: BrandService,
-    private colorService: ColorService,
-    private router: Router
+    private colorService: ColorService
   ) {}
 
   ngOnInit(): void {

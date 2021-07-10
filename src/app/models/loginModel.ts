@@ -1,4 +1,4 @@
-export interface LoginModel{
-    emai:string;
-    password:String
+export interface LoginModel {
+  emai: string;
+  password: String;
 }

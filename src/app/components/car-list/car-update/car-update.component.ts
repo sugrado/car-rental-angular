@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { Car } from 'src/app/models/car';
 import { CarService } from 'src/app/services/car.service';
 import {
@@ -25,17 +25,16 @@ export class CarUpdateComponent implements OnInit {
   brands: Brand[] = [];
   colors: Color[] = [];
   carUpdateForm: FormGroup;
-  filterText1 = "";
-  filterText2 = "";
+  filterText1 = '';
+  filterText2 = '';
 
   constructor(
     private activatedRoute: ActivatedRoute,
     private brandService: BrandService,
-    private colorService : ColorService,
+    private colorService: ColorService,
     private carService: CarService,
     private formBuilder: FormBuilder,
-    private toastrService: ToastrService,
-    private router: Router
+    private toastrService: ToastrService
   ) {}
 
   ngOnInit(): void {

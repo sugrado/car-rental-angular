@@ -1,8 +1,8 @@
 export interface CreditCard {
-    cardId: number;
-    cardHolder: string;
-    cardNumber: string;
-    expirationDate: number;
-    cvvCode:number;
-    isSave:boolean;
-  }
+  cardId: number;
+  cardHolder: string;
+  cardNumber: string;
+  expirationDate: number;
+  cvvCode: number;
+  isSave: boolean;
+}

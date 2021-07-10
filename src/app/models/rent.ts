@@ -1,7 +1,7 @@
-export interface Rent{
-    //id?:number;
-    carId:number;
-    customerId:number;
-    rentDate: Date;
-    returnDate: Date;
+export interface Rent {
+  //id?:number;
+  carId: number;
+  customerId: number;
+  rentDate: Date;
+  returnDate: Date;
 }

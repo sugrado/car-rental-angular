@@ -21,52 +21,60 @@ export class CarService {
   }
 
   getCarsByBrand(brandId: number): Observable<ListResponseModel<Car>> {
-    let newPath = this.apiUrl + 'cars/getcardetailsbybrand?id='+brandId;
+    let newPath = this.apiUrl + 'cars/getcardetailsbybrand?id=' + brandId;
     return this.httpClient.get<ListResponseModel<Car>>(newPath);
   }
 
   getCarsByColor(colorId: number): Observable<ListResponseModel<Car>> {
-    let newPath = this.apiUrl + 'cars/getcardetailsbycolor?id='+colorId;
+    let newPath = this.apiUrl + 'cars/getcardetailsbycolor?id=' + colorId;
     return this.httpClient.get<ListResponseModel<Car>>(newPath);
   }
 
   getImagesById(id: number): Observable<ListResponseModel<CarImage>> {
-    let newPath = this.apiUrl + 'imageuploads/getimagesbycarid?id='+id;
+    let newPath = this.apiUrl + 'imageuploads/getimagesbycarid?id=' + id;
     return this.httpClient.get<ListResponseModel<CarImage>>(newPath);
   }
 
   getSingleImage(id: number): Observable<ListResponseModel<CarImage>> {
-    let newPath = this.apiUrl + 'imageuploads/getimagesbycarid?id='+id;
+    let newPath = this.apiUrl + 'imageuploads/getimagesbycarid?id=' + id;
     return this.httpClient.get<ListResponseModel<CarImage>>(newPath);
   }
 
   getCarDetailById(id: number): Observable<ItemResponseModel<Car>> {
-    let newPath = this.apiUrl + 'cars/getcardetailsbyid?id='+id;
+    let newPath = this.apiUrl + 'cars/getcardetailsbyid?id=' + id;
     return this.httpClient.get<ItemResponseModel<Car>>(newPath);
   }
 
-  getCarsByMultiId(brandId:number, colorId:number): Observable<ListResponseModel<Car>>{
-    let newPath = this.apiUrl + "cars/getbymultipleid?brandId=" + brandId + "&colorId=" + colorId;
+  getCarsByMultiId(
+    brandId: number,
+    colorId: number
+  ): Observable<ListResponseModel<Car>> {
+    let newPath =
+      this.apiUrl +
+      'cars/getbymultipleid?brandId=' +
+      brandId +
+      '&colorId=' +
+      colorId;
     return this.httpClient.get<ListResponseModel<Car>>(newPath);
   }
 
-  deleteCar(car:Car): Observable<ResponseModel> {
-    let newPath = this.apiUrl+ "cars/delete"
-    return this.httpClient.post<ResponseModel>(newPath,car);
+  deleteCar(car: Car): Observable<ResponseModel> {
+    let newPath = this.apiUrl + 'cars/delete';
+    return this.httpClient.post<ResponseModel>(newPath, car);
   }
 
-  addCar(car:Car): Observable<ResponseModel> {
-    let newPath = this.apiUrl+ "cars/add"
-    return this.httpClient.post<ResponseModel>(newPath,car);
+  addCar(car: Car): Observable<ResponseModel> {
+    let newPath = this.apiUrl + 'cars/add';
+    return this.httpClient.post<ResponseModel>(newPath, car);
   }
 
-  updateCar(car:Car): Observable<ResponseModel> {
-    let newPath = this.apiUrl+ "cars/update"
-    return this.httpClient.post<ResponseModel>(newPath,car);
+  updateCar(car: Car): Observable<ResponseModel> {
+    let newPath = this.apiUrl + 'cars/update';
+    return this.httpClient.post<ResponseModel>(newPath, car);
   }
 
-  checkIfRentable(carId:number):Observable<boolean>{
-    let newPath = this.apiUrl+ "cars/checkifrentable?id=" + carId;
+  checkIfRentable(carId: number): Observable<boolean> {
+    let newPath = this.apiUrl + 'cars/checkifrentable?id=' + carId;
     return this.httpClient.get<boolean>(newPath);
   }
 }

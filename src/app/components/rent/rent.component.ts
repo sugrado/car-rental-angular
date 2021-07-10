@@ -1,13 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import {
-  FormGroup,
-  FormBuilder,
-  FormControl,
-  Validators,
-} from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { ErrorHelper } from 'src/app/helpers/errorHelper';
 import { Car } from 'src/app/models/car';
 import { CustomerDetail } from 'src/app/models/customerDetail';
 import { Rent } from 'src/app/models/rent';
@@ -16,7 +10,6 @@ import { CarService } from 'src/app/services/car.service';
 import { CustomerService } from 'src/app/services/customer.service';
 import { LocalStorageService } from 'src/app/services/local-storage.service';
 import { RentService } from 'src/app/services/rent.service';
-import { RentalService } from 'src/app/services/rental.service';
 
 @Component({
   selector: 'app-rent',
@@ -51,7 +44,7 @@ export class RentComponent implements OnInit {
       }
       this.getCustomerDetails();
     });
-    this.createRentalAddFrom()
+    this.createRentalAddFrom();
   }
 
   carId!: number;
@@ -83,7 +76,10 @@ export class RentComponent implements OnInit {
       };
       this.rentService.clearRentalInfoCache();
 
-      this.localStorageService.setItem('CustomerId', this.customerId.toString());
+      this.localStorageService.setItem(
+        'CustomerId',
+        this.customerId.toString()
+      );
       this.localStorageService.setItem('Rental', JSON.stringify(newRental));
 
       this.toastrService.success(
@@ -92,8 +88,8 @@ export class RentComponent implements OnInit {
       setTimeout(() => {
         this.router.navigate(['/payments/add']);
       }, 2000);
-    }else{
-      this.toastrService.error("Please fill in the blanks.", "Error");
+    } else {
+      this.toastrService.error('Please fill in the blanks.', 'Error');
     }
   }
 

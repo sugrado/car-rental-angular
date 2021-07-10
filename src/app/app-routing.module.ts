@@ -4,14 +4,12 @@ import { BrandAddComponent } from './components/brand/brand-add/brand-add.compon
 import { BrandDeleteComponent } from './components/brand/brand-delete/brand-delete.component';
 import { BrandDetailComponent } from './components/brand/brand-detail/brand-detail.component';
 import { BrandUpdateComponent } from './components/brand/brand-update/brand-update.component';
-import { BrandComponent } from './components/brand/brand.component';
 import { CarDetailComponent } from './components/car-detail/car-detail.component';
 import { CarComponent } from './components/car/car.component';
 import { ColorDetailComponent } from './components/color/color-detail/color-detail.component';
 import { ColorAddComponent } from './components/color/color-add/color-add.component';
 import { ColorDeleteComponent } from './components/color/color-delete/color-delete.component';
 import { ColorUpdateComponent } from './components/color/color-update/color-update.component';
-import { ColorComponent } from './components/color/color.component';
 import { CustomerComponent } from './components/customer/customer.component';
 import { RentalComponent } from './components/rental/rental.component';
 import { CarUpdateComponent } from './components/car-list/car-update/car-update.component';
@@ -94,7 +92,8 @@ const routes: Routes = [
   { path: 'cars/filter/:brandId/:colorId', component: CarComponent },
   {
     path: 'payments/add',
-    component: CreditCardComponent,canActivate: [LoginGuard],
+    component: CreditCardComponent,
+    canActivate: [LoginGuard],
     children: [
       {
         path: 'my-credit-cards/:userId',

@@ -5,16 +5,15 @@ import { ColorService } from 'src/app/services/color.service';
 @Component({
   selector: 'app-color-detail',
   templateUrl: './color-detail.component.html',
-  styleUrls: ['./color-detail.component.css']
+  styleUrls: ['./color-detail.component.css'],
 })
 export class ColorDetailComponent implements OnInit {
-
-  constructor(private colorService: ColorService) { }
-  colors:Color[]=[];
+  constructor(private colorService: ColorService) {}
+  colors: Color[] = [];
   currentColor: Color;
-  filterText = "";
+  filterText = '';
   ngOnInit(): void {
-    this.getColors()
+    this.getColors();
   }
 
   getColors() {

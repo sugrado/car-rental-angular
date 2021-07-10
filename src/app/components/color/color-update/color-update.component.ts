@@ -1,11 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  FormGroup,
-  FormBuilder,
-  FormControl,
-  Validators,
-} from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { ErrorHelper } from 'src/app/helpers/errorHelper';
 import { Color } from 'src/app/models/color';
@@ -24,7 +18,6 @@ export class ColorUpdateComponent implements OnInit {
   constructor(
     private colorService: ColorService,
     private formBuilder: FormBuilder,
-    private activatedRoute: ActivatedRoute,
     private toastrService: ToastrService
   ) {}
 

@@ -1,11 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  FormGroup,
-  FormBuilder,
-  FormControl,
-  Validators,
-} from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { ErrorHelper } from 'src/app/helpers/errorHelper';
 import { Brand } from 'src/app/models/brand';
@@ -24,7 +18,6 @@ export class BrandUpdateComponent implements OnInit {
   constructor(
     private brandService: BrandService,
     private formBuilder: FormBuilder,
-    private activatedRoute: ActivatedRoute,
     private toastrService: ToastrService
   ) {}
 
@@ -52,15 +45,19 @@ export class BrandUpdateComponent implements OnInit {
       this.brandService.updateBrand(brandModel).subscribe(
         (response) => {
           this.toastrService.success(response.message, 'Brand updated');
-          setTimeout(() => {  window.location.reload(); }, 1000);
+          setTimeout(() => {
+            window.location.reload();
+          }, 1000);
         },
         (responseError) => {
-          this.toastrService.error(ErrorHelper.getMessage(responseError), "Error");
+          this.toastrService.error(
+            ErrorHelper.getMessage(responseError),
+            'Error'
+          );
         }
       );
     } else {
       this.toastrService.warning('Name is required!', 'Warning');
     }
-    
   }
 }

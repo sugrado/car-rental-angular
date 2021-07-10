@@ -1,16 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  FormGroup,
-  FormBuilder,
-  FormControl,
-  Validator,
-  Validators,
-} from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { ErrorHelper } from 'src/app/helpers/errorHelper';
 import { AuthService } from 'src/app/services/auth.service';
-import { LocalStorageService } from 'src/app/services/local-storage.service';
 
 @Component({
   selector: 'app-register',
@@ -23,8 +16,7 @@ export class RegisterComponent implements OnInit {
     private FormBuilder: FormBuilder,
     private authService: AuthService,
     private toastrService: ToastrService,
-    private localStorageService: LocalStorageService,
-    private router :Router
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -45,9 +37,12 @@ export class RegisterComponent implements OnInit {
       let registerModel = Object.assign({}, this.registerForm.value);
       this.authService.register(registerModel).subscribe(
         (response) => {
-          this.toastrService.info(response.message, 'Redirecting to login page');
+          this.toastrService.info(
+            response.message,
+            'Redirecting to login page'
+          );
           setTimeout(() => {
-            this.router.navigate(["login"])
+            this.router.navigate(['login']);
           }, 1000);
         },
         (responseError) => {
@@ -57,7 +52,7 @@ export class RegisterComponent implements OnInit {
           );
         }
       );
-    }else{
+    } else {
       this.toastrService.error('Please fill in the blanks.', 'Error');
     }
   }

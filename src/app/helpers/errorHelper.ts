@@ -7,10 +7,10 @@ export class ErrorHelper {
     }
 
     // Bad Request
-    if(responseError.error.message!==undefined){
+    if (responseError.error.message !== undefined) {
       return responseError.error.message;
     }
-    
+
     // Validation Error Debug
     if (responseError.error.Errors !== null) {
       let validationErrors = responseError.error.Errors;

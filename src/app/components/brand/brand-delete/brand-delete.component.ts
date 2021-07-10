@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { FormGroup } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { ErrorHelper } from 'src/app/helpers/errorHelper';
 import { Brand } from 'src/app/models/brand';
@@ -18,10 +17,7 @@ export class BrandDeleteComponent implements OnInit {
 
   constructor(
     private brandService: BrandService,
-    private formBuilder: FormBuilder,
-    private activatedRoute: ActivatedRoute,
-    private toastrService: ToastrService,
-    private router: Router
+    private toastrService: ToastrService
   ) {}
 
   ngOnInit(): void {
@@ -35,12 +31,19 @@ export class BrandDeleteComponent implements OnInit {
   }
 
   deleteBrand(brand: Brand) {
-    this.brandService.deleteBrand(brand).subscribe((response) => {
-      this.toastrService.success(response.message, 'Brand deleted');
-      setTimeout(() => {  window.location.reload(); }, 1000);
-    }, (responseError) => {
-      this.toastrService.error(ErrorHelper.getMessage(responseError),"Error");
-    });
-    
+    this.brandService.deleteBrand(brand).subscribe(
+      (response) => {
+        this.toastrService.success(response.message, 'Brand deleted');
+        setTimeout(() => {
+          window.location.reload();
+        }, 1000);
+      },
+      (responseError) => {
+        this.toastrService.error(
+          ErrorHelper.getMessage(responseError),
+          'Error'
+        );
+      }
+    );
   }
 }

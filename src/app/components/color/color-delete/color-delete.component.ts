@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { ErrorHelper } from 'src/app/helpers/errorHelper';
 import { Color } from 'src/app/models/color';
@@ -19,9 +18,7 @@ export class ColorDeleteComponent implements OnInit {
   constructor(
     private colorService: ColorService,
     private formBuilder: FormBuilder,
-    private activatedRoute: ActivatedRoute,
-    private toastrService: ToastrService,
-    private router: Router
+    private toastrService: ToastrService
   ) {}
 
   ngOnInit(): void {

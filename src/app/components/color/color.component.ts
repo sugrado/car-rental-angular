@@ -10,9 +10,9 @@ import { ColorService } from 'src/app/services/color.service';
 export class ColorComponent implements OnInit {
   colors: Color[] = [];
   currentColor: Color;
-  colorForReset:Color={colorId:-1, colorName:""}
+  colorForReset: Color = { colorId: -1, colorName: '' };
   dataLoaded = false;
-  filterText = "";
+  filterText = '';
 
   constructor(private colorService: ColorService) {}
 
@@ -32,7 +32,7 @@ export class ColorComponent implements OnInit {
   }
 
   resetCurrentColor() {
-    this.setCurrentColor(this.colorForReset)
+    this.setCurrentColor(this.colorForReset);
   }
 
   getCurrentColorClass(color: Color) {

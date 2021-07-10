@@ -8,12 +8,15 @@ import { CreditCardService } from 'src/app/services/credit-card.service';
 @Component({
   selector: 'app-my-cards',
   templateUrl: './my-cards.component.html',
-  styleUrls: ['./my-cards.component.css']
+  styleUrls: ['./my-cards.component.css'],
 })
 export class MyCardsComponent implements OnInit {
-
-  cards:CreditCard[]=[];
-  constructor(private creditCardService : CreditCardService, private activatedRoute : ActivatedRoute, private toastrService : ToastrService) { }
+  cards: CreditCard[] = [];
+  constructor(
+    private creditCardService: CreditCardService,
+    private activatedRoute: ActivatedRoute,
+    private toastrService: ToastrService
+  ) {}
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
@@ -45,5 +48,4 @@ export class MyCardsComponent implements OnInit {
       }
     );
   }
-
 }

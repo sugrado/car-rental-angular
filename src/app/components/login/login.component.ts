@@ -1,11 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  FormGroup,
-  FormBuilder,
-  FormControl,
-  Validator,
-  Validators,
-} from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
@@ -51,8 +45,10 @@ export class LoginComponent implements OnInit {
         (response) => {
           this.toastrService.success(response.message, 'Information');
           this.localStorageService.setItem('token', response.data.token);
-          setTimeout(() => { window.location.reload()  }, 1000);
-          this.router.navigate([""]);
+          setTimeout(() => {
+            window.location.reload();
+          }, 1000);
+          this.router.navigate(['']);
         },
         (responseError) => {
           this.toastrService.error(
@@ -61,7 +57,7 @@ export class LoginComponent implements OnInit {
           );
         }
       );
-    }else{
+    } else {
       this.toastrService.error('Please fill in the blanks.', 'Error');
     }
   }

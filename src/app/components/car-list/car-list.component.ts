@@ -1,12 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  FormGroup,
-  FormBuilder,
-  FormControl,
-  Validator,
-  Validators,
-} from '@angular/forms';
-import { Router } from '@angular/router';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { ErrorHelper } from 'src/app/helpers/errorHelper';
 import { Car } from 'src/app/models/car';
@@ -21,8 +14,7 @@ export class CarListComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private toastrService: ToastrService,
-    private carService: CarService,
-    private router: Router
+    private carService: CarService
   ) {}
 
   cars: Car[] = [];

@@ -7,33 +7,40 @@ import { PasswordModel } from '../models/passwordModel';
 import { RegisterModel } from '../models/registerModel';
 import { ResponseModel } from '../models/responseModel';
 import { TokenModel } from '../models/tokenModel';
-import { UpdateModel } from '../models/updateModel';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
   apiUrl = 'https://localhost:44350/api/auth/';
-  constructor(private httpClient:HttpClient) { }
+  constructor(private httpClient: HttpClient) {}
 
-  login(loginModel:LoginModel){
-    return this.httpClient.post<ItemResponseModel<TokenModel>>(this.apiUrl+"login", loginModel)
+  login(loginModel: LoginModel) {
+    return this.httpClient.post<ItemResponseModel<TokenModel>>(
+      this.apiUrl + 'login',
+      loginModel
+    );
   }
 
-  register(registerModel:RegisterModel){
-    return this.httpClient.post<ItemResponseModel<TokenModel>>(this.apiUrl+"register", registerModel)
+  register(registerModel: RegisterModel) {
+    return this.httpClient.post<ItemResponseModel<TokenModel>>(
+      this.apiUrl + 'register',
+      registerModel
+    );
   }
 
-  isAuthenticated(){
-    if(localStorage.getItem("token")){
+  isAuthenticated() {
+    if (localStorage.getItem('token')) {
       return true;
-    }else{
+    } else {
       return false;
     }
   }
 
-  changePassword(passwordChangeModel:PasswordModel):Observable<ResponseModel>{
-    let newPath = this.apiUrl + "changepass";
-    return this.httpClient.post<ResponseModel>(newPath,passwordChangeModel);
+  changePassword(
+    passwordChangeModel: PasswordModel
+  ): Observable<ResponseModel> {
+    let newPath = this.apiUrl + 'changepass';
+    return this.httpClient.post<ResponseModel>(newPath, passwordChangeModel);
   }
 }

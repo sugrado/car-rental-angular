@@ -1,11 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  FormGroup,
-  FormBuilder,
-  FormControl,
-  Validators,
-} from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { ErrorHelper } from 'src/app/helpers/errorHelper';
 import { ColorService } from 'src/app/services/color.service';
@@ -21,7 +15,6 @@ export class ColorAddComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private colorService: ColorService,
-    private activatedRoute: ActivatedRoute,
     private toastrService: ToastrService
   ) {}
 
